@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://jidvf6c1tkgs"]
+
+[ext_resource type="Script" path="res://scripts/ui/playbutton.gd" id="1_cyuk1"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 150.0
+offset_right = 689.0
+offset_bottom = 190.0
+text = "Re:Weathered - The Weathering"
+fit_content = true
+
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 458.0
+offset_right = 585.0
+offset_bottom = 489.0
+text = "Jouer"
+script = ExtResource("1_cyuk1")
+
+[connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_pressed"]
