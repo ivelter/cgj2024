@@ -491,7 +491,8 @@ text = "[center]Cliquer pour continuer.[/center]"
 
 [node name="TextContent" type="RichTextLabel" parent="DialogueBox"]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 83.0
-offset_right = 1143.0
+offset_left = 109.0
+offset_top = 104.0
+offset_right = 1068.0
 offset_bottom = 574.0
+theme_override_font_sizes/normal_font_size = 24
