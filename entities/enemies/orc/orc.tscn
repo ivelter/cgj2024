@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://c3cias6fmcxll"]
 
-[ext_resource type="Script" path="res://entities/enemies/ange/ange.gd" id="1_f7ili"]
+[ext_resource type="Script" path="res://entities/enemies/orc/orc.gd" id="1_4meve"]
 [ext_resource type="Texture2D" uid="uid://c210cv22rpeqg" path="res://assets/sprites/enemies/0x72_DungeonTilesetII_v1.6.png" id="2_a8eim"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qxrts"]
@@ -101,7 +101,7 @@ radius = 365.088
 
 [node name="orc" type="CharacterBody2D"]
 position = Vector2(18, 155)
-script = ExtResource("1_f7ili")
+script = ExtResource("1_4meve")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
