@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dmpmplerdxuo0"]
+[gd_scene load_steps=27 format=3 uid="uid://dnop3bc2wu1wm"]
 
 [ext_resource type="Texture2D" uid="uid://b41eh02bc1wv" path="res://assets/sprites/terrain/tilesTerrain1.png" id="1_dyo5j"]
 [ext_resource type="Texture2D" uid="uid://dirbsokwmjp8n" path="res://assets/sprites/terrain/tilesTerrain2.png" id="2_d85ii"]
@@ -6900,6 +6900,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vladk"]
+size = Vector2(36, 40.2635)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ffcg7"]
 atlas = ExtResource("8_y1lnh")
 region = Rect2(0, 0, 64, 64)
@@ -6982,10 +6985,10 @@ texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -323.0
-offset_top = -686.0
-offset_right = 2548.0
-offset_bottom = 1872.0
+offset_left = -358.0
+offset_top = -693.0
+offset_right = 2513.0
+offset_bottom = 1865.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_6njxw")
@@ -6995,6 +6998,12 @@ position = Vector2(1598, 466)
 scale = Vector2(2, 2.01563)
 sprite_frames = SubResource("SpriteFrames_7xngj")
 
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D" groups=["chest"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D"]
+position = Vector2(0, 10.1318)
+shape = SubResource("RectangleShape2D_vladk")
+
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 position = Vector2(1150, -163)
 scale = Vector2(1.92187, 2.21094)
@@ -7003,3 +7012,6 @@ frame_progress = 0.557525
 
 [node name="Player" parent="." instance=ExtResource("9_i4vie")]
 position = Vector2(716, 1032)
+
+[connection signal="body_entered" from="AnimatedSprite2D/Area2D" to="Player" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="AnimatedSprite2D/Area2D" to="Player" method="_on_area_2d_body_exited"]

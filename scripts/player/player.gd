@@ -7,6 +7,9 @@ const SPEED = 20000
 var walkingSpeed = 1.0
 var directionOfPlayer = "up" 
 var playerState = "idle"
+var arc = false
+var canOpenChest = false
+var chest = null;
 
 func update_direction():
 	if Input.is_action_pressed("move_left"):
@@ -45,6 +48,7 @@ func animationInteractionUpdate(anim_name: String = "") -> void:
 		elif interacted():
 			playerState = "interacting"
 			animation_player.play("left_pick_up")
+			open(chest)
 		elif playerState == "idle" or playerState == "walking":
 			playerState = "walking"
 			match (directionOfPlayer):
@@ -118,6 +122,21 @@ func _on_animation_player_animation_finished() -> void:
 				animation_player.play("left_idle")
 			"right":
 				animation_player.play("left_idle")
+
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("player"):
+		chest = body
+
+func _on_area_2d_body_exited(body):
+	if body.is_in_group("player"):
+		chest = null
+
+func open(chest):
+	if chest != null:			
+		arc = true
+		print("arc obtenu")
+		chest = null
 
 func take_dmg(damage: int = 1) -> void:
 	PlayerInfo.healthPoints -= damage 
