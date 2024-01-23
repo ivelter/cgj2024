@@ -2740,6 +2740,7 @@ texture_filter = 1
 position = Vector2(1150, -163)
 scale = Vector2(1.92187, 2.21094)
 sprite_frames = SubResource("SpriteFrames_gykao")
+autoplay = "default"
 frame_progress = 0.0485165
 script = ExtResource("5_jf33o")
 
