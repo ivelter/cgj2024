@@ -7,7 +7,6 @@ var player = null
 func _physics_process(delta):
 	
 	if player_chase:
-		print(player.position)
 		$AnimatedSprite2D.play("runing")
 		velocity = position.direction_to(player.position) * speed
 		move_and_slide()

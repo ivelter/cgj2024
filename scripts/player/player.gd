@@ -11,6 +11,25 @@ var arc = false
 var canOpenChest = false
 var chest = null;
 
+func _process(delta):
+	# Vérifiez si le CharacterBody2D est en collision
+	#if is_colliding():
+		# Obtenez le corps de collision
+	if get_last_slide_collision() != null:
+		var colliding_body = get_last_slide_collision().get_collider()
+		#print(colliding_body.name)
+		# Vérifiez si le corps de collision est un TileMap et s'il a le nom "caca"
+		if colliding_body.name == "SkyTileMap":
+			# Faites quelque chose lorsque la collision avec le TileMap "caca" est détectée
+			PlayerInfo.healthPoints = 3
+			SceneManager.load_scene("game/Hub.tscn")
+	
+
+# Fonction pour vérifier si le CharacterBody2D est en collision
+##func is_colliding() -> bool:
+	#return collide()
+
+	
 func update_direction():
 	if Input.is_action_pressed("move_left"):
 		animation_player.flip_h = false
@@ -158,3 +177,7 @@ func die() -> void:
 func update_health_bar() -> void:
 	healthBar.max_value = PlayerInfo.maxHealthPoints
 	healthBar.value = PlayerInfo.healthPoints
+	
+	
+
+
