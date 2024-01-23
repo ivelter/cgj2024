@@ -162,6 +162,9 @@ func open(chest):
 		chest = null
 
 func take_dmg(damage: int = 1) -> void:
+	playerState = "aMal";
+	if playerState == "aMal":
+		animation_player.play("hit")
 	PlayerInfo.healthPoints -= damage
 	if PlayerInfo.healthPoints <= 0:
 		die()

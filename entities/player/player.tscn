@@ -267,7 +267,7 @@ animations = [{
 "duration": 3.5,
 "texture": SubResource("AtlasTexture_2dau0")
 }],
-"loop": true,
+"loop": false,
 "name": &"hit",
 "speed": 10.0
 }, {
@@ -455,7 +455,8 @@ scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_0qt2h")
 animation = &"hit"
 autoplay = "down_idle"
-frame_progress = 0.399756
+frame = 1
+frame_progress = 1.0
 
 [node name="Hurtbox" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -1)
