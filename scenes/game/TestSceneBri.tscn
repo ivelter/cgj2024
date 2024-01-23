@@ -212,7 +212,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_frwrp")
 }],
-"loop": true,
+"loop": false,
 "name": &"down_attack",
 "speed": 5.0
 }, {
@@ -232,7 +232,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_uyftr")
 }],
-"loop": true,
+"loop": false,
 "name": &"down_idle",
 "speed": 5.0
 }, {
@@ -255,7 +255,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_sv4kj")
 }],
-"loop": true,
+"loop": false,
 "name": &"down_walk",
 "speed": 5.0
 }, {
@@ -269,7 +269,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_g6xsw")
 }],
-"loop": true,
+"loop": false,
 "name": &"left_attack",
 "speed": 5.0
 }, {
@@ -289,7 +289,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yr5d1")
 }],
-"loop": true,
+"loop": false,
 "name": &"left_idle",
 "speed": 5.0
 }, {
@@ -309,7 +309,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_olqst")
 }],
-"loop": true,
+"loop": false,
 "name": &"left_pick_up",
 "speed": 5.0
 }, {
@@ -332,7 +332,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_uc00m")
 }],
-"loop": true,
+"loop": false,
 "name": &"left_walk",
 "speed": 5.0
 }, {
@@ -346,7 +346,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hrf34")
 }],
-"loop": true,
+"loop": false,
 "name": &"up_attack",
 "speed": 5.0
 }, {
@@ -366,7 +366,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_t34g3")
 }],
-"loop": true,
+"loop": false,
 "name": &"up_idle",
 "speed": 5.0
 }, {
@@ -389,7 +389,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_exih5")
 }],
-"loop": true,
+"loop": false,
 "name": &"up_walk",
 "speed": 5.0
 }]
@@ -403,7 +403,7 @@ script = ExtResource("1_roin4")
 position = Vector2(82, 81)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_0qt2h")
-animation = &"down_idle"
+animation = &"up_walk"
 autoplay = "down_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
