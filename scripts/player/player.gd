@@ -55,6 +55,7 @@ func animationInteractionUpdate(anim_name: String = "") -> void:
 	if Input.is_anything_pressed():
 		if swung_sword():
 			playerState = "swung_sword"
+			
 			match (directionOfPlayer):
 				"up":
 					animation_player.play("up_attack")
@@ -159,7 +160,7 @@ func open(chest):
 		chest = null
 
 func take_dmg(damage: int = 1) -> void:
-	PlayerInfo.healthPoints -= damage 
+	PlayerInfo.healthPoints -= damage
 	if PlayerInfo.healthPoints <= 0:
 		die()
 	update_health_bar()
@@ -171,8 +172,8 @@ func set_health(health: int = 3) -> void:
 	update_health_bar()
 
 func die() -> void:
-	#TODO: crever
-	pass
+	PlayerInfo.healthPoints = 3
+	SceneManager.load_scene("game/Hub.tscn")
 
 func update_health_bar() -> void:
 	healthBar.max_value = PlayerInfo.maxHealthPoints

@@ -122,5 +122,8 @@ collision_mask = 2
 position = Vector2(1, 2)
 shape = SubResource("CircleShape2D_43cog")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
 [connection signal="body_entered" from="ColisionShape" to="." method="_on_colision_shape_body_entered"]
 [connection signal="body_exited" from="ColisionShape" to="." method="_on_colision_shape_body_exited"]
