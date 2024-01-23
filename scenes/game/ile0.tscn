@@ -1,9 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://c6rc7jq8jqwvq"]
+[gd_scene load_steps=21 format=3 uid="uid://c6rc7jq8jqwvq"]
 
 [ext_resource type="TileSet" uid="uid://wjsng8xcnmrd" path="res://assets/tilesets/ile0.tres" id="1_60w02"]
-[ext_resource type="PackedScene" uid="uid://bsu5m6j1kcpi0" path="res://entities/enemies/ange/ange.tscn" id="6_gqm04"]
+[ext_resource type="Script" path="res://scripts/coupe_doree.gd" id="5_jf33o"]
 [ext_resource type="Texture2D" uid="uid://n8wnk6d7sju7" path="res://assets/sprites/terrain/sky1.png" id="6_isy8g"]
 [ext_resource type="Texture2D" uid="uid://bscovfaox3mpe" path="res://assets/sprites/terrain/chest.png" id="7_jd70f"]
+[ext_resource type="PackedScene" uid="uid://c3cias6fmcxll" path="res://entities/enemies/orc/orc.tscn" id="7_swq6x"]
+[ext_resource type="PackedScene" uid="uid://be2pepqfydh5q" path="res://entities/enemies/bigMouth/big_mouth.tscn" id="8_1d1ah"]
 [ext_resource type="Texture2D" uid="uid://ddw4q7myd4l2a" path="res://assets/sprites/terrain/portail.png" id="8_g275o"]
 [ext_resource type="PackedScene" uid="uid://cpodpha35gsv0" path="res://entities/player/player.tscn" id="9_x2pgw"]
 
@@ -19,7 +21,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hjcdc"]
-size = Vector2(34, 38.6975)
+size = Vector2(34, 39.6898)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ffcg7"]
 atlas = ExtResource("8_g275o")
@@ -85,6 +87,9 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iqo4c"]
+size = Vector2(36.9432, 37.1378)
+
 [node name="Level1" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -121,8 +126,8 @@ sprite_frames = SubResource("SpriteFrames_7xngj")
 
 [node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D"]
-position = Vector2(0.5, 7.44186)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D" groups=["chest"]]
+position = Vector2(0.5, 5.95347)
 shape = SubResource("RectangleShape2D_hjcdc")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
@@ -131,12 +136,23 @@ position = Vector2(1150, -163)
 scale = Vector2(1.92187, 2.21094)
 sprite_frames = SubResource("SpriteFrames_gykao")
 frame_progress = 0.0485165
+script = ExtResource("5_jf33o")
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D2/Area2D"]
+position = Vector2(-0.780518, 8.56889)
+shape = SubResource("RectangleShape2D_iqo4c")
 
 [node name="Player" parent="." instance=ExtResource("9_x2pgw")]
 position = Vector2(716, 1032)
 
-[node name="ange" parent="." instance=ExtResource("6_gqm04")]
-position = Vector2(668, 585)
+[node name="orc" parent="." instance=ExtResource("7_swq6x")]
+position = Vector2(1515, 598)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("8_1d1ah")]
+position = Vector2(697, 153)
 
 [connection signal="body_entered" from="AnimatedSprite2D/Area2D" to="Player" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="AnimatedSprite2D/Area2D" to="Player" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="AnimatedSprite2D2/Area2D" to="AnimatedSprite2D2" method="_on_area_2d_coupe"]
