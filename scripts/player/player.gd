@@ -75,9 +75,11 @@ func _ready():
 
 func _physics_process(delta):
 	#test
+	"""
 	if Input.is_action_just_pressed("test_key_1"):
 		take_dmg()
 		print_debug(PlayerInfo.healthPoints)
+	"""
 	
 	# Mouvement du joueur
 	if Input.is_action_pressed("dash"):

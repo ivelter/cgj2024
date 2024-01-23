@@ -411,54 +411,54 @@ bg_color = Color(0.909804, 0.145098, 0.313726, 1)
 
 [node name="Player" type="CharacterBody2D"]
 texture_filter = 1
-position = Vector2(-82, -99)
+position = Vector2(479, 215)
 script = ExtResource("1_8jpf7")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(83, 97)
+position = Vector2(-4, 2)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(82, 81)
+position = Vector2(-1.99999, -20)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_0qt2h")
 animation = &"up_walk"
 autoplay = "down_idle"
 
 [node name="Hurtbox" type="CollisionShape2D" parent="."]
-position = Vector2(83.5, 100)
+position = Vector2(-0.5, -1)
 shape = SubResource("RectangleShape2D_porep")
 debug_color = Color(0.67451, 0.278431, 0.203922, 0.419608)
 
 [node name="UpInteractCollision" type="CollisionShape2D" parent="."]
 texture_filter = 1
-position = Vector2(83.5, 69)
+position = Vector2(-0.5, -32)
 shape = SubResource("RectangleShape2D_ryj7v")
 disabled = true
 debug_color = Color(0.239216, 0.529412, 0.4, 0.419608)
 
 [node name="DownInteractCollision" type="CollisionShape2D" parent="."]
-position = Vector2(84, 129)
+position = Vector2(0, 28)
 shape = SubResource("RectangleShape2D_ryj7v")
 disabled = true
 debug_color = Color(0.239216, 0.529412, 0.4, 0.419608)
 
 [node name="LeftInteractCollision" type="CollisionShape2D" parent="."]
-position = Vector2(54, 98.5)
+position = Vector2(-30, -2.5)
 shape = SubResource("RectangleShape2D_e8x0y")
 disabled = true
 debug_color = Color(0.329412, 0.407843, 0.882353, 0.419608)
 
 [node name="RightInteractCollision" type="CollisionShape2D" parent="."]
-position = Vector2(111, 98)
+position = Vector2(27, -3)
 shape = SubResource("RectangleShape2D_e8x0y")
 disabled = true
 debug_color = Color(0.329412, 0.407843, 0.882353, 0.419608)
 
 [node name="HealthBar" type="ProgressBar" parent="."]
-offset_left = -471.0
-offset_top = -209.0
-offset_right = -306.0
-offset_bottom = -182.0
+offset_left = -555.0
+offset_top = -299.0
+offset_right = -390.0
+offset_bottom = -272.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
@@ -468,3 +468,12 @@ max_value = 8.0
 step = 1.0
 value = 3.0
 show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="Dialogue_DarkBG" type="ColorRect" parent="."]
+offset_left = -589.0
+offset_top = -338.0
+offset_right = 593.0
+offset_bottom = 339.0
+color = Color(0, 0, 0, 0.384314)
+metadata/_edit_use_anchors_ = true
