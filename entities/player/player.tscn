@@ -423,19 +423,23 @@ debug_color = Color(0.67451, 0.278431, 0.203922, 0.419608)
 [node name="UpInteractCollision" type="CollisionShape2D" parent="."]
 position = Vector2(83.5, 69)
 shape = SubResource("RectangleShape2D_ryj7v")
+disabled = true
 debug_color = Color(0.239216, 0.529412, 0.4, 0.419608)
 
 [node name="DownInteractCollision" type="CollisionShape2D" parent="."]
 position = Vector2(84, 129)
 shape = SubResource("RectangleShape2D_ryj7v")
+disabled = true
 debug_color = Color(0.239216, 0.529412, 0.4, 0.419608)
 
 [node name="LeftInteractCollision" type="CollisionShape2D" parent="."]
 position = Vector2(54, 98.5)
 shape = SubResource("RectangleShape2D_e8x0y")
+disabled = true
 debug_color = Color(0.329412, 0.407843, 0.882353, 0.419608)
 
 [node name="RightInteractCollision" type="CollisionShape2D" parent="."]
 position = Vector2(111, 98)
 shape = SubResource("RectangleShape2D_e8x0y")
+disabled = true
 debug_color = Color(0.329412, 0.407843, 0.882353, 0.419608)

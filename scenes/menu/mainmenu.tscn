@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://jidvf6c1tkgs"]
 
 [ext_resource type="Script" path="res://scripts/ui/playbutton.gd" id="1_cyuk1"]
-[ext_resource type="PackedScene" path="res://entities/enemies/skeleton.tscn" id="2_c6v1b"]
+[ext_resource type="PackedScene" uid="uid://bo6tvmwedo5re" path="res://entities/enemies/skeleton.tscn" id="2_c6v1b"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
