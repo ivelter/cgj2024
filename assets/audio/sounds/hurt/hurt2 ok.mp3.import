@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://8180giba4rsl"
+path="res://.godot/imported/hurt2 ok.mp3-7ab29a910f37580a4afd7a63b9208b32.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sounds/hurt/hurt2 ok.mp3"
+dest_files=["res://.godot/imported/hurt2 ok.mp3-7ab29a910f37580a4afd7a63b9208b32.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
