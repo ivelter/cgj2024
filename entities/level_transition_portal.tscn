@@ -1,0 +1,88 @@
+[gd_scene load_steps=13 format=3 uid="uid://cjnc40l5nv2wy"]
+
+[ext_resource type="Texture2D" uid="uid://ddw4q7myd4l2a" path="res://assets/sprites/terrain/portail.png" id="1_34ysg"]
+[ext_resource type="Script" path="res://scripts/coupe_doree.gd" id="2_oncnw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffcg7"]
+atlas = ExtResource("1_34ysg")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22jhr"]
+atlas = ExtResource("1_34ysg")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5awq"]
+atlas = ExtResource("1_34ysg")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_356bn"]
+atlas = ExtResource("1_34ysg")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hji0a"]
+atlas = ExtResource("1_34ysg")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ce8by"]
+atlas = ExtResource("1_34ysg")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n81w0"]
+atlas = ExtResource("1_34ysg")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_syqaq"]
+atlas = ExtResource("1_34ysg")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gykao"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ffcg7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22jhr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5awq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_356bn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hji0a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ce8by")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n81w0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_syqaq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iqo4c"]
+size = Vector2(36.9432, 37.1378)
+
+[node name="LevelTransitionPortal" type="AnimatedSprite2D"]
+texture_filter = 1
+position = Vector2(1150, -163)
+scale = Vector2(1.92187, 2.21094)
+sprite_frames = SubResource("SpriteFrames_gykao")
+autoplay = "default"
+frame_progress = 0.0485165
+script = ExtResource("2_oncnw")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.780518, 8.56889)
+shape = SubResource("RectangleShape2D_iqo4c")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_coupe"]

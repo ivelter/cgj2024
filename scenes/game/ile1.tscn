@@ -1,80 +1,16 @@
-[gd_scene load_steps=16 format=3 uid="uid://m4ddsauebl5f"]
+[gd_scene load_steps=7 format=3 uid="uid://m4ddsauebl5f"]
 
 [ext_resource type="TileSet" uid="uid://wjsng8xcnmrd" path="res://assets/tilesets/ile0.tres" id="1_bfp56"]
 [ext_resource type="Texture2D" uid="uid://n8wnk6d7sju7" path="res://assets/sprites/terrain/sky1.png" id="2_766am"]
 [ext_resource type="Texture2D" uid="uid://bscovfaox3mpe" path="res://assets/sprites/terrain/chest.png" id="3_go4vy"]
-[ext_resource type="Texture2D" uid="uid://ddw4q7myd4l2a" path="res://assets/sprites/terrain/portail.png" id="4_xoypi"]
 [ext_resource type="PackedScene" uid="uid://cpodpha35gsv0" path="res://entities/player/player.tscn" id="5_30xhy"]
+[ext_resource type="PackedScene" uid="uid://cjnc40l5nv2wy" path="res://entities/level_transition_portal.tscn" id="5_ckj4a"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s63gd"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_go4vy")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fweol"]
-atlas = ExtResource("4_xoypi")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_obbvv"]
-atlas = ExtResource("4_xoypi")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6g52d"]
-atlas = ExtResource("4_xoypi")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i0t0l"]
-atlas = ExtResource("4_xoypi")
-region = Rect2(192, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1rj07"]
-atlas = ExtResource("4_xoypi")
-region = Rect2(256, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_boua3"]
-atlas = ExtResource("4_xoypi")
-region = Rect2(320, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rnmsh"]
-atlas = ExtResource("4_xoypi")
-region = Rect2(384, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a4uag"]
-atlas = ExtResource("4_xoypi")
-region = Rect2(448, 0, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_kbu3w"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fweol")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_obbvv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6g52d")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i0t0l")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1rj07")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_boua3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rnmsh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a4uag")
 }],
 "loop": true,
 "name": &"default",
@@ -105,10 +41,8 @@ position = Vector2(4775, 6039)
 scale = Vector2(2.70313, 2.89065)
 sprite_frames = SubResource("SpriteFrames_s63gd")
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
-position = Vector2(2005, 3459)
-scale = Vector2(1.82813, 2.01563)
-sprite_frames = SubResource("SpriteFrames_kbu3w")
-
 [node name="Player" parent="." instance=ExtResource("5_30xhy")]
 position = Vector2(6407, 6839)
+
+[node name="LevelTransitionPortal" parent="." instance=ExtResource("5_ckj4a")]
+position = Vector2(1994, 3491)
