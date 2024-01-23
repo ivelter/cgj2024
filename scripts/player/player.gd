@@ -86,6 +86,10 @@ func _physics_process(delta):
 	"""
 	
 	# Mouvement du joueur
+	if Input.is_action_just_pressed("test_key_1"):
+		SaveManager.savePlayerData()
+		print_debug("yipeeeeeee")
+	
 	if Input.is_action_pressed("dash"):
 		walkingSpeed = 1.5
 		animation_player.speed_scale = 1.5

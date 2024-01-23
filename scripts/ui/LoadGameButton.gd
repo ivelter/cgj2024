@@ -12,4 +12,5 @@ func _process(delta):
 
 # Appelée quand on clique sur le bouton
 func _on_pressed():
-	pass
+	if (SaveManager.loadPlayerData()):
+		SceneManager.load_scene("game/Hub.tscn")
