@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var playerInfo = PlayerInfo
 @onready var hurtBox = $Hurtbox
 const SPEED = 20000
+var walkingSpeed = 1.0
 var directionOfPlayer = "up" 
 var playerState = "idle"
 
@@ -73,9 +74,16 @@ func _ready():
 
 func _physics_process(delta):
 	# Mouvement du joueur
+	if Input.is_action_pressed("dash"):
+		walkingSpeed = 1.5
+		animation_player.speed_scale = 1.5
+	else:
+		walkingSpeed = 1.0
+		animation_player.speed_scale = 1.0
+	
 	if(playerState == "idle" or playerState == "walking"):
 		var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-		velocity = direction * SPEED * delta
+		velocity = direction * SPEED * walkingSpeed * delta
 	else:
 		velocity = Vector2(0, 0)
 	move_and_slide()
