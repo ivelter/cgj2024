@@ -109,7 +109,6 @@ func _physics_process(delta):
 
 # Signal pour quand une anim se finit
 func _on_animation_player_animation_finished() -> void:
-	print_debug("oui.")
 	var anim_name = animation_player.animation
 	playerState = "idle"
 	if Input.is_anything_pressed():

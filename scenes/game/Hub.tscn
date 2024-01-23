@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dp73qkf8d1ari"]
+[gd_scene load_steps=29 format=3 uid="uid://dp73qkf8d1ari"]
 
 [ext_resource type="TileSet" uid="uid://wjsng8xcnmrd" path="res://assets/tilesets/ile0.tres" id="1_nwfdh"]
 [ext_resource type="Script" path="res://scripts/entities/Grave1.gd" id="2_2etv8"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://oasjqiv1ir0s" path="res://assets/sprites/terrain/book.png" id="3_r48e3"]
 [ext_resource type="Script" path="res://scripts/entities/Grave3.gd" id="4_8e8ei"]
 [ext_resource type="Script" path="res://scripts/entities/Grave2.gd" id="6_supin"]
+[ext_resource type="Script" path="res://scripts/entities/SaveIcon.gd" id="8_n8lvu"]
+[ext_resource type="Texture2D" uid="uid://5v5deuhluxs0" path="res://assets/sprites/terrain/floppy.png" id="9_nvm6n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d8ray"]
 atlas = ExtResource("3_r48e3")
@@ -27,7 +29,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t3er0"]
-size = Vector2(47, 50)
+size = Vector2(55.5, 59)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rgx5u"]
 atlas = ExtResource("3_0vvbs")
@@ -38,6 +40,21 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rgx5u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qe5y"]
+atlas = ExtResource("9_nvm6n")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qfvmk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qe5y")
 }],
 "loop": true,
 "name": &"default",
@@ -189,6 +206,22 @@ position = Vector2(2, 18)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Grave1/Area2D"]
 position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_t3er0")
+
+[node name="SaveIcon" type="CharacterBody2D" parent="."]
+visibility_layer = 2
+position = Vector2(-469, -319)
+script = ExtResource("8_n8lvu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SaveIcon"]
+sprite_frames = SubResource("SpriteFrames_qfvmk")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="SaveIcon"]
+position = Vector2(2, 18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SaveIcon/Area2D"]
+position = Vector2(-1.75, -19.5)
 shape = SubResource("RectangleShape2D_t3er0")
 
 [node name="Portail" type="CharacterBody2D" parent="."]
