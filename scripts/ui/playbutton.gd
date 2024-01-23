@@ -13,4 +13,5 @@ func _process(delta):
 # Appelée quand on clique sur le bouton
 func _on_pressed():
 	# print_debug("Clic!")
-	get_tree().change_scene_to_file("res://scenes/game/Level1.tscn")
+	SceneManager.load_scene("game/Level1.tscn")
+	# get_tree().change_scene_to_file("res://scenes/game/Level1.tscn")
