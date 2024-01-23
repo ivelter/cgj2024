@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
 @onready var animation_player = $AnimatedSprite2D
+@onready var playerInfo = PlayerInfo
+@onready var hurtBox = $Hurtbox
 const SPEED = 20000
 var directionOfPlayer = "up" 
 var playerState = "idle"
@@ -53,6 +55,17 @@ func animationInteractionUpdate(anim_name: String = "") -> void:
 					animation_player.play("left_walk")
 				"right":
 					animation_player.play("left_walk")
+	else:
+		if playerState == "walking":
+			match (directionOfPlayer):
+				"up":
+					animation_player.play("up_idle")
+				"down":
+					animation_player.play("down_idle")
+				"left":
+					animation_player.play("left_idle")
+				"right":
+					animation_player.play("left_idle")
 
 func _ready():
 	animation_player.play(directionOfPlayer + "_idle")
@@ -63,6 +76,8 @@ func _physics_process(delta):
 	if(playerState == "idle" or playerState == "walking"):
 		var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 		velocity = direction * SPEED * delta
+	else:
+		velocity = Vector2(0, 0)
 	move_and_slide()
 	
 	# Animation

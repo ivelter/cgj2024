@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://byh4orbpixq0s"]
+[gd_scene load_steps=61 format=3 uid="uid://byh4orbpixq0s"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_roin4"]
 [ext_resource type="Texture2D" uid="uid://ces2qxlkfc2sp" path="res://assets/sprites/player/szadiart-RPGMainCharacter/_down attack.png" id="2_3igw8"]
@@ -394,6 +394,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_porep"]
+size = Vector2(37, 40)
+
 [node name="TestSceneBri" type="Node2D"]
 
 [node name="Player" type="CharacterBody2D" parent="."]
@@ -406,5 +409,7 @@ sprite_frames = SubResource("SpriteFrames_0qt2h")
 animation = &"up_walk"
 autoplay = "down_idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+[node name="Hurtbox" type="CollisionShape2D" parent="Player"]
+position = Vector2(83.5, 100)
+shape = SubResource("RectangleShape2D_porep")
 debug_color = Color(0.67451, 0.278431, 0.203922, 0.419608)
