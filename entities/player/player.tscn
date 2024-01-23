@@ -410,7 +410,7 @@ bg_color = Color(0.352941, 0.27451, 0.392157, 0.509804)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y00jh"]
 bg_color = Color(0.909804, 0.145098, 0.313726, 1)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 texture_filter = 1
 position = Vector2(479, 215)
 script = ExtResource("1_8jpf7")

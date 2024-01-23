@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c6rc7jq8jqwvq"]
+[gd_scene load_steps=18 format=3 uid="uid://c6rc7jq8jqwvq"]
 
 [ext_resource type="TileSet" uid="uid://wjsng8xcnmrd" path="res://assets/tilesets/ile0.tres" id="1_60w02"]
 [ext_resource type="PackedScene" uid="uid://bsu5m6j1kcpi0" path="res://entities/enemies/ange/ange.tscn" id="6_gqm04"]
@@ -17,6 +17,9 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hjcdc"]
+size = Vector2(34, 38.6975)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ffcg7"]
 atlas = ExtResource("8_g275o")
@@ -116,6 +119,12 @@ position = Vector2(1598, 466)
 scale = Vector2(2, 2.01563)
 sprite_frames = SubResource("SpriteFrames_7xngj")
 
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D"]
+position = Vector2(0.5, 7.44186)
+shape = SubResource("RectangleShape2D_hjcdc")
+
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(1150, -163)
@@ -128,3 +137,6 @@ position = Vector2(716, 1032)
 
 [node name="ange" parent="." instance=ExtResource("6_gqm04")]
 position = Vector2(668, 585)
+
+[connection signal="body_entered" from="AnimatedSprite2D/Area2D" to="Player" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="AnimatedSprite2D/Area2D" to="Player" method="_on_area_2d_body_exited"]
