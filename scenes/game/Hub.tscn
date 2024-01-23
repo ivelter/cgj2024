@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://dp73qkf8d1ari"]
+[gd_scene load_steps=16 format=3 uid="uid://dp73qkf8d1ari"]
 
 [ext_resource type="TileSet" uid="uid://wjsng8xcnmrd" path="res://assets/tilesets/ile0.tres" id="1_nwfdh"]
 [ext_resource type="Texture2D" uid="uid://ddw4q7myd4l2a" path="res://assets/sprites/terrain/portail.png" id="2_6bxu5"]
 [ext_resource type="PackedScene" uid="uid://cpodpha35gsv0" path="res://entities/player/player.tscn" id="2_myl1h"]
 [ext_resource type="Script" path="res://scripts/entities/HubPortal.gd" id="2_quy8c"]
+[ext_resource type="PackedScene" uid="uid://bp80nj24i018w" path="res://entities/enemies/skeleton/skeleton.tscn" id="5_8rbl4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ha1mm"]
 atlas = ExtResource("2_6bxu5")
@@ -104,3 +105,9 @@ shape = SubResource("RectangleShape2D_t3er0")
 
 [node name="Player" parent="." instance=ExtResource("2_myl1h")]
 position = Vector2(-3, 2)
+
+[node name="skeleton" parent="." instance=ExtResource("5_8rbl4")]
+position = Vector2(-671, -359)
+
+[node name="skeleton2" parent="." instance=ExtResource("5_8rbl4")]
+position = Vector2(-528, -393)
