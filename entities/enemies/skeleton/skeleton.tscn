@@ -86,12 +86,12 @@ animations = [{
 script = ExtResource("1_7audd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(239, 185)
+position = Vector2(1, -21)
 shape = SubResource("RectangleShape2D_jr0b1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(239.5, 181.5)
+position = Vector2(1.50002, -24.5)
 scale = Vector2(5.1875, 5.1875)
 sprite_frames = SubResource("SpriteFrames_rcgn0")
 animation = &"runing"

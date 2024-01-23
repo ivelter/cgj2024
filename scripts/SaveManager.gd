@@ -1,14 +1,5 @@
 extends Node
 
-"""
-healthPoints = 3
-	maxHealthPoints = 3
-	hasUnlockedStone1 = false
-	hasUnlockedStone2 = false
-	hasUnlockedStone3 = false
-	hasUnlockedDiary = false
-"""
-
 func playerDataToJSON():
 	return JSON.stringify({
 		"healthPoints": PlayerInfo.healthPoints,
