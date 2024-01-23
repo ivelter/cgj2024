@@ -21,6 +21,7 @@ PlayerInfo="*res://scripts/player/PlayerInfo.gd"
 SceneManager="*res://scripts/SceneManager.gd"
 SaveManager="*res://scripts/SaveManager.gd"
 DialogueBox="*res://scripts/player/DialogueBox.gd"
+AudioManager="*res://scripts/AudioManager.gd"
 
 [display]
 
