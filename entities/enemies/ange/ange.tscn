@@ -86,26 +86,27 @@ size = Vector2(39, 50)
 radius = 873.112
 
 [node name="ange" type="CharacterBody2D"]
-position = Vector2(18, 155)
+position = Vector2(20, 131)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_2ys4e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(558.75, 152.25)
+position = Vector2(-2.99994, -14)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_ig5il")
 animation = &"idling"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(566.5, 165)
+position = Vector2(4.75, -1.25)
 shape = SubResource("RectangleShape2D_62ps0")
 
 [node name="ColisionShape" type="Area2D" parent="."]
+position = Vector2(4.25, 1.75)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColisionShape"]
-position = Vector2(549, 146)
+position = Vector2(-5.25, -1.75)
 shape = SubResource("CircleShape2D_43cog")
 
 [connection signal="body_entered" from="ColisionShape" to="." method="_on_colision_shape_body_entered"]
