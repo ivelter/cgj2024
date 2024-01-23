@@ -133,7 +133,7 @@ func _on_area_2d_body_exited(body):
 		chest = null
 
 func open(chest):
-	if chest != null:			
+	if chest != null:
 		arc = true
 		print("arc obtenu")
 		chest = null
