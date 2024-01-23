@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 PlayerInfo="*res://scripts/player/PlayerInfo.gd"
 SceneManager="*res://scripts/SceneManager.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [input]
 
 move_left={
