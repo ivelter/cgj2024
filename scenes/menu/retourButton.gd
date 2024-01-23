@@ -10,6 +10,5 @@ func _ready():
 func _process(delta):
 	pass
 
-# Appelée quand on clique sur le bouton
 func _on_pressed():
-	SceneManager.get_tree().change_scene_to_file("res://scenes/menu/credit.tscn")
+	SceneManager.get_tree().change_scene_to_file("res://scenes/menu/mainmenu.tscn")

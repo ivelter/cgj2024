@@ -96,5 +96,5 @@ offset_bottom = 229.0
 texture = ExtResource("8_v7hha")
 
 [connection signal="pressed" from="NewGameButton" to="NewGameButton" method="_on_pressed"]
-[connection signal="pressed" from="LoadGameButton" to="LoadGameButton" method="_on_pressed"]
+[connection signal="pressed" from="CreditButton" to="CreditButton" method="_on_pressed"]
 [connection signal="pressed" from="QuitButton" to="QuitButton" method="_on_pressed"]

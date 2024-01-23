@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddh34qtcpfg2a"]
+
+[ext_resource type="Texture2D" uid="uid://b7og73vbn8ogq" path="res://assets/logo/fond_gris.png" id="1_31ho8"]
+[ext_resource type="Texture2D" uid="uid://cj6jxbeje3l45" path="res://assets/logo/main_title.png" id="2_31gh3"]
+[ext_resource type="Script" path="res://scenes/menu/retourButton.gd" id="2_r7mm0"]
+[ext_resource type="Texture2D" uid="uid://bbstgfn2saigo" path="res://assets/logo/credits1.png" id="3_luhvg"]
+[ext_resource type="Texture2D" uid="uid://cpm14ies6d28s" path="res://assets/logo/credits2.png" id="4_isvr3"]
+
+[node name="Credit" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -13.0
+offset_top = -8.0
+offset_right = 1167.0
+offset_bottom = 663.0
+texture = ExtResource("1_31ho8")
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+offset_left = 64.0
+offset_top = 40.0
+offset_right = 651.0
+offset_bottom = 656.0
+texture = ExtResource("2_31gh3")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 202.0
+offset_top = 46.0
+offset_right = 1145.0
+offset_bottom = 167.0
+texture = ExtResource("3_luhvg")
+expand_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+offset_left = 192.0
+offset_top = 133.0
+offset_right = 664.0
+offset_bottom = 166.0
+texture = ExtResource("1_31ho8")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+offset_left = 478.0
+offset_top = 231.0
+offset_right = 1047.0
+offset_bottom = 505.0
+texture = ExtResource("4_isvr3")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="."]
+offset_left = 31.0
+offset_top = 591.0
+offset_right = 101.0
+offset_bottom = 622.0
+text = "retour"
+script = ExtResource("2_r7mm0")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
