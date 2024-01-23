@@ -138,9 +138,3 @@ shape = SubResource("RectangleShape2D_t3er0")
 
 [node name="Player" parent="." instance=ExtResource("2_myl1h")]
 position = Vector2(-3, 2)
-
-[node name="skeleton" parent="." instance=ExtResource("5_8rbl4")]
-position = Vector2(-671, -359)
-
-[node name="skeleton2" parent="." instance=ExtResource("5_8rbl4")]
-position = Vector2(-528, -393)
