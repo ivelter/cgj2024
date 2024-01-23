@@ -1,17 +1,29 @@
 extends Node
 
+var ilesSelection = [
+	"ile0",
+	"ile1"
+]
+var previousScene = "null"
+
 func scene_changer():
-	var scene_selection = [1, 2, 3]
 	randomize()
-	var object = scene_selection[randi() % scene_selection.size()]
-	return "res://scenes/game/iles/" + str(object) + ".tscn"
+	var object
+	if (previousScene == "null"):
+		object = ilesSelection[randi() % ilesSelection.size()]
+	else:
+		object = ilesSelection[randi() % ilesSelection.size()]
+		while object == previousScene:
+			object = ilesSelection[randi() % ilesSelection.size()]
+	previousScene = object
+	return "res://scenes/game/" + str(object) + ".tscn"
 
 func change_scene():
-	var chemin = null
-	while (chemin == get_tree().edited_scene_root.get_resource_path() || chemin == null):
-		chemin = scene_changer()
-	print_debug(chemin)
-	get_tree().change_scene_to_file(chemin)
+	#var chemin = null
+	#while (chemin == get_tree().edited_scene_root.get_resource_path() || chemin == null):
+	#	chemin = scene_changer()
+	#print_debug(chemin)
+	get_tree().change_scene_to_file(scene_changer())
 
 func load_scene(name):
 	get_tree().change_scene_to_file("res://scenes/" + name)

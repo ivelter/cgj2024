@@ -14,4 +14,5 @@ func _process(delta):
 func _on_area_2d_coupe(body):
 	#print("nouveau niveauu")
 	#SceneManager.load_scene("game/TestSceneBri.tscn")
-	SceneManager.load_scene("game/ile1.tscn")
+	#SceneManager.load_scene("game/ile1.tscn")
+	SceneManager.change_scene()
