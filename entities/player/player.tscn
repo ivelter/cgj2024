@@ -404,6 +404,7 @@ size = Vector2(66.5, 20)
 size = Vector2(19.75, 53)
 
 [node name="Player" type="CharacterBody2D"]
+texture_filter = 1
 script = ExtResource("1_8jpf7")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -421,6 +422,7 @@ shape = SubResource("RectangleShape2D_porep")
 debug_color = Color(0.67451, 0.278431, 0.203922, 0.419608)
 
 [node name="UpInteractCollision" type="CollisionShape2D" parent="."]
+texture_filter = 1
 position = Vector2(83.5, 69)
 shape = SubResource("RectangleShape2D_ryj7v")
 disabled = true
