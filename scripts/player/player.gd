@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 @onready var animation_player = $AnimatedSprite2D
-@onready var playerInfo = PlayerInfo
 @onready var hurtBox = $Hurtbox
+@onready var healthBar = $HealthBar
 const SPEED = 20000
 var walkingSpeed = 1.0
 var directionOfPlayer = "up" 
@@ -71,8 +71,14 @@ func animationInteractionUpdate(anim_name: String = "") -> void:
 func _ready():
 	animation_player.play(directionOfPlayer + "_idle")
 	animation_player.connect("animation_finished", _on_animation_player_animation_finished)
+	update_health_bar()
 
 func _physics_process(delta):
+	#test
+	if Input.is_action_just_pressed("test_key_1"):
+		take_dmg()
+		print_debug(PlayerInfo.healthPoints)
+	
 	# Mouvement du joueur
 	if Input.is_action_pressed("dash"):
 		walkingSpeed = 1.5
@@ -110,3 +116,23 @@ func _on_animation_player_animation_finished() -> void:
 				animation_player.play("left_idle")
 			"right":
 				animation_player.play("left_idle")
+
+func take_dmg(damage: int = 1) -> void:
+	PlayerInfo.healthPoints -= damage 
+	if PlayerInfo.healthPoints <= 0:
+		die()
+	update_health_bar()
+
+func set_health(health: int = 3) -> void:
+	PlayerInfo.healthPoints = health 
+	if health <= 0:
+		die()
+	update_health_bar()
+
+func die() -> void:
+	#TODO: crever
+	pass
+
+func update_health_bar() -> void:
+	healthBar.max_value = PlayerInfo.maxHealthPoints
+	healthBar.value = PlayerInfo.healthPoints
