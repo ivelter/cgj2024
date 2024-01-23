@@ -1,15 +1,16 @@
 extends CharacterBody2D
 
-@onready var _animation_player = $AnimatedSprite2D
+@onready var animation_player = $AnimatedSprite2D
 const SPEED = 20000
 var directionOfPlayer = "up" 
+var playerState = "idle"
 
 func update_direction():
 	if Input.is_action_pressed("move_left"):
-		_animation_player.flip_h = false
+		animation_player.flip_h = false
 		directionOfPlayer = "left"
 	if Input.is_action_pressed("move_right"):
-		_animation_player.flip_h = true
+		animation_player.flip_h = true
 		directionOfPlayer = "right"
 	if Input.is_action_pressed("move_up"):
 		directionOfPlayer = "up"
@@ -25,39 +26,43 @@ func interacted() -> bool:
 	return Input.is_action_just_pressed("interact")
 
 #Update l'animation en fonction de si le joueur a fait une action
-func animationInteractionUpdate() -> void:
+func animationInteractionUpdate(anim_name: String = "") -> void:
 	if Input.is_anything_pressed():
 		if swung_sword():
+			playerState = "swung_sword"
 			match (directionOfPlayer):
 				"up":
-					_animation_player.play("up_attack")
+					animation_player.play("up_attack")
 				"down":
-					_animation_player.play("down_attack")
+					animation_player.play("down_attack")
 				"left":
-					_animation_player.play("left_attack")
+					animation_player.play("left_attack")
 				"right":
-					_animation_player.play("left_attack")
+					animation_player.play("left_attack")
 		elif interacted():
-			_animation_player.play("left_pick_up")
-		else:
+			playerState = "interacting"
+			animation_player.play("left_pick_up")
+		elif playerState == "idle" or playerState == "walking":
+			playerState = "walking"
 			match (directionOfPlayer):
 				"up":
-					_animation_player.play("up_walk")
+					animation_player.play("up_walk")
 				"down":
-					_animation_player.play("down_walk")
+					animation_player.play("down_walk")
 				"left":
-					_animation_player.play("left_walk")
+					animation_player.play("left_walk")
 				"right":
-					_animation_player.play("left_walk")
+					animation_player.play("left_walk")
 
 func _ready():
-	_animation_player.play(directionOfPlayer + "_idle")
+	animation_player.play(directionOfPlayer + "_idle")
+	animation_player.connect("animation_finished", _on_animation_player_animation_finished)
 
 func _physics_process(delta):
 	# Mouvement du joueur
-	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	velocity = direction * SPEED * delta
-
+	if(playerState == "idle" or playerState == "walking"):
+		var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+		velocity = direction * SPEED * delta
 	move_and_slide()
 	
 	# Animation
@@ -65,17 +70,20 @@ func _physics_process(delta):
 	# Override de l'animation si jamais le joueur fait une action
 	animationInteractionUpdate()
 
-# Signal handler for animation finished
-func _on_animation_player_animation_finished(anim_name: String) -> void:
+# Signal pour quand une anim se finit
+func _on_animation_player_animation_finished() -> void:
+	print_debug("oui.")
+	var anim_name = animation_player.animation
+	playerState = "idle"
 	if Input.is_anything_pressed():
-		animationInteractionUpdate()
+		animationInteractionUpdate(anim_name)
 	else:
 		match (directionOfPlayer):
 			"up":
-				_animation_player.play("up_idle")
+				animation_player.play("up_idle")
 			"down":
-				_animation_player.play("down_idle")
+				animation_player.play("down_idle")
 			"left":
-				_animation_player.play("left_idle")
+				animation_player.play("left_idle")
 			"right":
-				_animation_player.play("left_idle")
+				animation_player.play("left_idle")
