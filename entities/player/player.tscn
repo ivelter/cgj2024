@@ -482,7 +482,7 @@ color = Color(0, 0, 0, 0.384314)
 script = ExtResource("12_2iyof")
 metadata/_edit_use_anchors_ = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="DialogueBox"]
+[node name="ClickToContinue" type="RichTextLabel" parent="DialogueBox"]
 layout_mode = 0
 offset_left = 12.0
 offset_top = 596.0
@@ -492,6 +492,7 @@ bbcode_enabled = true
 text = "[center]Cliquer pour continuer.[/center]"
 
 [node name="TextContent" type="RichTextLabel" parent="DialogueBox"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 109.0
 offset_top = 104.0

@@ -1,6 +1,7 @@
 extends ColorRect
 
-@onready var text = $TextContent
+var textBox
+var playerRef
 
 const stoneTablet1_content = """
 ℸ ̣ ⍑ᒷ ℸ ̣ ∷ᔑ╎ℸ ̣ 𝙹∷ᓭ ꖎᒷ⎓ℸ ̣  ⚍ᓭ ↸ᒷᔑ↸
@@ -21,31 +22,44 @@ const diary_content = """
 
 """
 
+"""
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	closeBox()
-	
+	#textBox = find_child("TextContent")
+"""
+
+func getRefOfDialogue():
+	if textBox == null:
+		textBox = playerRef.get_node("DialogueBox/TextContent")
+
 func displayBox():
-	show()
+	playerRef.get_node("DialogueBox").show()
 
 func closeBox():
-	hide()
+	playerRef.get_node("DialogueBox").hide()
 
 func display_stone1():
-	text.text = stoneTablet1_content 
+	getRefOfDialogue()
+	textBox.text = (stoneTablet1_content)  
 	displayBox()
 
 func display_stone2():
-	text.text = stoneTablet2_content 
+	getRefOfDialogue()
+	textBox.text = (stoneTablet2_content)  
 	displayBox()
 
 func display_stone3():
-	text.text = stoneTablet3_content 
+	getRefOfDialogue()
+	textBox.text = (stoneTablet3_content)   
 	displayBox()
 
 func display_diary():
-	text.text = diary_content
+	getRefOfDialogue()
+	textBox.text = (diary_content)  
 	displayBox()
+
+func setPlayerRef(node: Node):
+	playerRef = node
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

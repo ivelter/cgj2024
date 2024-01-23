@@ -75,6 +75,8 @@ func animationInteractionUpdate(anim_name: String = "") -> void:
 func _ready():
 	animation_player.play(directionOfPlayer + "_idle")
 	animation_player.connect("animation_finished", _on_animation_player_animation_finished)
+	DialogueBox.setPlayerRef(self)
+	DialogueBox.closeBox()
 	update_health_bar()
 
 func _physics_process(delta):
