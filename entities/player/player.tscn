@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://cpodpha35gsv0"]
+[gd_scene load_steps=65 format=3 uid="uid://cpodpha35gsv0"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_8jpf7"]
 [ext_resource type="Texture2D" uid="uid://ces2qxlkfc2sp" path="res://assets/sprites/player/szadiart-RPGMainCharacter/_down attack.png" id="2_wdehm"]
@@ -403,11 +403,19 @@ size = Vector2(66.5, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e8x0y"]
 size = Vector2(19.75, 53)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ivq8"]
+bg_color = Color(0.352941, 0.27451, 0.392157, 0.509804)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y00jh"]
+bg_color = Color(0.909804, 0.145098, 0.313726, 1)
+
 [node name="Player" type="CharacterBody2D"]
 texture_filter = 1
+position = Vector2(-82, -99)
 script = ExtResource("1_8jpf7")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(83, 97)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(82, 81)
@@ -445,3 +453,18 @@ position = Vector2(111, 98)
 shape = SubResource("RectangleShape2D_e8x0y")
 disabled = true
 debug_color = Color(0.329412, 0.407843, 0.882353, 0.419608)
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -471.0
+offset_top = -209.0
+offset_right = -306.0
+offset_bottom = -182.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_styles/background = SubResource("StyleBoxFlat_0ivq8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_y00jh")
+max_value = 8.0
+step = 1.0
+value = 3.0
+show_percentage = false
