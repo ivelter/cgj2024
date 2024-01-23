@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://bsu5m6j1kcpi0"]
+[gd_scene load_steps=15 format=3 uid="uid://bsu5m6j1kcpi0"]
 
+[ext_resource type="Script" path="res://entities/enemies/ange/ange.gd" id="1_2ys4e"]
 [ext_resource type="Texture2D" uid="uid://c210cv22rpeqg" path="res://assets/sprites/enemies/0x72_DungeonTilesetII_v1.6.png" id="1_nd3gh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qrmut"]
@@ -79,17 +80,33 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_62ps0"]
-size = Vector2(96, 99)
+size = Vector2(39, 50)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_43cog"]
+radius = 873.112
 
 [node name="ange" type="CharacterBody2D"]
+position = Vector2(18, 155)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_2ys4e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(542, 133)
-scale = Vector2(8.8125, 8.8125)
+position = Vector2(558.75, 152.25)
+scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_ig5il")
 animation = &"idling"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(547, 148)
+position = Vector2(566.5, 165)
 shape = SubResource("RectangleShape2D_62ps0")
+
+[node name="ColisionShape" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColisionShape"]
+position = Vector2(549, 146)
+shape = SubResource("CircleShape2D_43cog")
+
+[connection signal="body_entered" from="ColisionShape" to="." method="_on_colision_shape_body_entered"]
+[connection signal="body_exited" from="ColisionShape" to="." method="_on_colision_shape_body_exited"]

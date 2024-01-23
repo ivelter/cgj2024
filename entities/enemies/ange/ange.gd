@@ -1,20 +1,22 @@
 extends CharacterBody2D
 
-@onready var _animated_sprite = $AnimatedSprite2D
-@onready var target = get_node("ress://entities/player.player.tscn").getPosition()
+var speed = 25
+var player_chase = false
+var player = null
 
-var speed = 300
-
-func _process(_delta):
-	if velocity.x == 0 && velocity.y == 0:
-		_animated_sprite.play("idling")
+func _physics_process(delta):
+	if player_chase:
+		$AnimatedSprite2D.play("runing")
+		position += (player.position - position)/speed
 	else:
-		_animated_sprite.play("runing")
-		
-	# target = get_node("CollisionShape2D").getPosition()
-		
-	velocity = position.direction_to(target) * speed
-	
-	# look_at(target)
-	if position.distance_to(target) > 15:
-		move_and_slide()
+		$AnimatedSprite2D.play("idling")
+
+
+func _on_colision_shape_body_entered(body):
+	player = body
+	player_chase = true
+
+
+func _on_colision_shape_body_exited(body):
+	player = null
+	player_chase = false;
