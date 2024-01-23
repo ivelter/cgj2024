@@ -6997,4 +6997,4 @@ sprite_frames = SubResource("SpriteFrames_7xngj")
 position = Vector2(1150, -163)
 scale = Vector2(1.92187, 2.21094)
 sprite_frames = SubResource("SpriteFrames_gykao")
-frame_progress = 0.046505
+frame_progress = 0.557525
