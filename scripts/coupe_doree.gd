@@ -11,5 +11,6 @@ func _process(delta):
 	pass
 
 
-func _on_area_2d_body_entered(body):
-	print("ici script pour scene suivante")
+func _on_area_2d_coupe(body):
+	print("nouveau niveauu")
+	#SceneManager.load_scene("game/TestSceneBri.tscn")

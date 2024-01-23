@@ -151,4 +151,4 @@ position = Vector2(668, 585)
 
 [connection signal="body_entered" from="AnimatedSprite2D/Area2D" to="Player" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="AnimatedSprite2D/Area2D" to="Player" method="_on_area_2d_body_exited"]
-[connection signal="body_entered" from="AnimatedSprite2D2/Area2D" to="AnimatedSprite2D2" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="AnimatedSprite2D2/Area2D" to="AnimatedSprite2D2" method="_on_area_2d_coupe"]
