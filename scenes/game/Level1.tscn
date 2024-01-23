@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://1violinlaig7"]
+[gd_scene load_steps=26 format=3 uid="uid://dnop3bc2wu1wm"]
 
 [ext_resource type="Texture2D" uid="uid://b41eh02bc1wv" path="res://assets/sprites/terrain/tilesTerrain1.png" id="1_dyo5j"]
 [ext_resource type="Texture2D" uid="uid://dirbsokwmjp8n" path="res://assets/sprites/terrain/tilesTerrain2.png" id="2_d85ii"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://l07mi10hft66" path="res://assets/sprites/terrain/tilesDecors2Coffre.png" id="5_60vh1"]
 [ext_resource type="Texture2D" uid="uid://bscovfaox3mpe" path="res://assets/sprites/terrain/chest.png" id="7_fmgnt"]
 [ext_resource type="Texture2D" uid="uid://ddw4q7myd4l2a" path="res://assets/sprites/terrain/portail.png" id="8_y1lnh"]
+[ext_resource type="PackedScene" uid="uid://cpodpha35gsv0" path="res://entities/player/player.tscn" id="9_i4vie"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qmigf"]
 texture = ExtResource("1_dyo5j")
@@ -6998,3 +6999,6 @@ position = Vector2(1150, -163)
 scale = Vector2(1.92187, 2.21094)
 sprite_frames = SubResource("SpriteFrames_gykao")
 frame_progress = 0.557525
+
+[node name="Player" parent="." instance=ExtResource("9_i4vie")]
+position = Vector2(716, 1032)
