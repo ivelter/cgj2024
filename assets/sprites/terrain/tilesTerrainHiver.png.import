@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2xae0gy7smo8"
-path="res://.godot/imported/wall-8 - 2 tiles tall.png-944cfbfb77097f3db9201c4a8bade3f6.ctex"
+uid="uid://cieb2vtf5qy5v"
+path="res://.godot/imported/tilesTerrainHiver.png-657cf6e9d36a28d22990e97111e4c328.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/terrain/wall-8 - 2 tiles tall.png"
-dest_files=["res://.godot/imported/wall-8 - 2 tiles tall.png-944cfbfb77097f3db9201c4a8bade3f6.ctex"]
+source_file="res://assets/sprites/terrain/tilesTerrainHiver.png"
+dest_files=["res://.godot/imported/tilesTerrainHiver.png-657cf6e9d36a28d22990e97111e4c328.ctex"]
 
 [params]
 
