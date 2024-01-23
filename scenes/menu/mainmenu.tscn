@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://jidvf6c1tkgs"]
+[gd_scene load_steps=3 format=3 uid="uid://jidvf6c1tkgs"]
 
 [ext_resource type="Script" path="res://scripts/ui/playbutton.gd" id="1_cyuk1"]
+[ext_resource type="PackedScene" uid="uid://bo6tvmwedo5re" path="res://entities/enemies/skeleton.tscn" id="2_c6v1b"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -27,5 +28,7 @@ offset_right = 585.0
 offset_bottom = 489.0
 text = "Jouer"
 script = ExtResource("1_cyuk1")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_c6v1b")]
 
 [connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_pressed"]
