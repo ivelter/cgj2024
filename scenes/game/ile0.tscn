@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c6rc7jq8jqwvq"]
+[gd_scene load_steps=14 format=3 uid="uid://c6rc7jq8jqwvq"]
 
 [ext_resource type="TileSet" uid="uid://wjsng8xcnmrd" path="res://assets/tilesets/ile0.tres" id="1_60w02"]
 [ext_resource type="PackedScene" path="res://entities/level_transition_portal.tscn" id="4_2vnhw"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://l07mi10hft66" path="res://assets/sprites/terrain/tilesDecors2Coffre.png" id="9_p1mja"]
 [ext_resource type="PackedScene" uid="uid://cpodpha35gsv0" path="res://entities/player/player.tscn" id="9_x2pgw"]
 [ext_resource type="PackedScene" uid="uid://bp80nj24i018w" path="res://entities/enemies/skeleton/skeleton.tscn" id="9_yqqqc"]
-[ext_resource type="PackedScene" uid="uid://bsu5m6j1kcpi0" path="res://entities/enemies/ange/ange.tscn" id="10_4gpax"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7xngj"]
 animations = [{
@@ -2695,12 +2694,6 @@ position = Vector2(468, 481)
 
 [node name="skeleton3" parent="." instance=ExtResource("9_yqqqc")]
 position = Vector2(469, 524)
-
-[node name="ange" parent="." instance=ExtResource("10_4gpax")]
-position = Vector2(1462, 1065)
-
-[node name="ange2" parent="." instance=ExtResource("10_4gpax")]
-position = Vector2(1549, 1115)
 
 [connection signal="body_entered" from="AnimatedSprite2D/Area2D" to="Player" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="AnimatedSprite2D/Area2D" to="Player" method="_on_area_2d_body_exited"]
