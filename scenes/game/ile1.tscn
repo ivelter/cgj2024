@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://m4ddsauebl5f"]
+[gd_scene load_steps=20 format=3 uid="uid://m4ddsauebl5f"]
 
 [ext_resource type="TileSet" uid="uid://wjsng8xcnmrd" path="res://assets/tilesets/ile0.tres" id="1_bfp56"]
 [ext_resource type="Texture2D" uid="uid://n8wnk6d7sju7" path="res://assets/sprites/terrain/sky1.png" id="2_766am"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://bsu5m6j1kcpi0" path="res://entities/enemies/ange/ange.tscn" id="8_lcm48"]
 [ext_resource type="PackedScene" uid="uid://c3cias6fmcxll" path="res://entities/enemies/orc/orc.tscn" id="9_8fvv4"]
 [ext_resource type="PackedScene" uid="uid://be2pepqfydh5q" path="res://entities/enemies/bigMouth/big_mouth.tscn" id="10_wnw33"]
+[ext_resource type="Script" path="res://scripts/entities/GraveUnlock3.gd" id="11_pipdp"]
+[ext_resource type="Texture2D" uid="uid://bn4q0uw64hoxg" path="res://assets/sprites/terrain/stoneslate.png" id="12_sxkb5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dh2ai"]
 texture = ExtResource("6_xf3i6")
@@ -2625,6 +2627,24 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2exii"]
 size = Vector2(34, 39.6898)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgx5u"]
+atlas = ExtResource("12_sxkb5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ldecx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgx5u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4e3gg"]
+size = Vector2(55.5, 59)
+
 [node name="Ile1" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -2737,3 +2757,20 @@ position = Vector2(3150, 5168)
 
 [node name="orc3" parent="." instance=ExtResource("9_8fvv4")]
 position = Vector2(3736, 6070)
+
+[node name="GraveUnlock3" type="CharacterBody2D" parent="."]
+visibility_layer = 2
+position = Vector2(135, 5504)
+script = ExtResource("11_pipdp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GraveUnlock3"]
+position = Vector2(2, 18)
+sprite_frames = SubResource("SpriteFrames_ldecx")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="GraveUnlock3"]
+position = Vector2(2, 18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GraveUnlock3/Area2D"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_4e3gg")
