@@ -17,3 +17,7 @@ func _on_area_2d_coupe(body):
 	#SceneManager.load_scene("game/ile1.tscn")
 	PlayerInfo.currentAltitude += randi_range(50, 250)
 	SceneManager.change_scene()
+	
+	if randi_range(0,2) == 1:
+		AudioManager.pauseMusic()
+		AudioManager.randMusic()
