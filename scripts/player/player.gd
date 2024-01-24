@@ -203,7 +203,7 @@ func update_health_bar() -> void:
 	
 	
 func _on_up_area_body_entered(body):
-	if(body.has_method("is_orc")):
+	if(body.has_method("is_enemy")):
 		up = true
 		enemyU = body
 	else:
@@ -211,7 +211,7 @@ func _on_up_area_body_entered(body):
 
 
 func _on_down_area_body_entered(body):
-	if(body.has_method("is_orc")):
+	if(body.has_method("is_enemy")):
 		down = true
 		enemyD = body
 	else:
@@ -219,7 +219,7 @@ func _on_down_area_body_entered(body):
 
 
 func _on_left_area_body_entered(body):
-	if(body.has_method("is_orc")):
+	if(body.has_method("is_enemy")):
 		left = true
 		enemyL = body
 	else:
@@ -227,7 +227,7 @@ func _on_left_area_body_entered(body):
 
 
 func _on_right_area_body_entered(body):
-	if(body.has_method("is_orc")):
+	if(body.has_method("is_enemy")):
 		right = true
 		enemyR = body
 	else:
