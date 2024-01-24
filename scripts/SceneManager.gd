@@ -3,6 +3,7 @@ extends Node
 var ilesSelection = [
 	"ile0",
 	"ile1",
+	"ile2",
 	"ile5"
 ]
 var previousScene = "null"
