@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://c6rc7jq8jqwvq"]
 
 [ext_resource type="TileSet" uid="uid://wjsng8xcnmrd" path="res://assets/tilesets/ile0.tres" id="1_60w02"]
-[ext_resource type="PackedScene" path="res://entities/level_transition_portal.tscn" id="4_2vnhw"]
+[ext_resource type="PackedScene" uid="uid://cjnc40l5nv2wy" path="res://entities/level_transition_portal.tscn" id="4_2vnhw"]
 [ext_resource type="Texture2D" uid="uid://n8wnk6d7sju7" path="res://assets/sprites/terrain/sky1.png" id="6_isy8g"]
 [ext_resource type="Texture2D" uid="uid://bscovfaox3mpe" path="res://assets/sprites/terrain/chest.png" id="7_jd70f"]
 [ext_resource type="PackedScene" uid="uid://c3cias6fmcxll" path="res://entities/enemies/orc/orc.tscn" id="7_swq6x"]
