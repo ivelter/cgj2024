@@ -16,6 +16,8 @@ var enemyU = null
 var enemyL = null
 var enemyR = null
 var enemyD = null
+var is_playing = false
+
 
 func show_message(text):
 	DialogueBox.display_text(text)
@@ -59,6 +61,9 @@ func interacted() -> bool:
 func animationInteractionUpdate(anim_name: String = "") -> void:
 	if Input.is_anything_pressed():
 		if swung_sword():
+			if !playerState.contains("swung_sword"):
+				AudioManager.playSwordSound()
+			
 			playerState = "swung_sword"			
 			match (directionOfPlayer):
 				"up":
@@ -110,6 +115,7 @@ func _ready():
 	DialogueBox.setPlayerRef(self)
 	DialogueBox.closeBox()
 	update_health_bar()
+
 
 func _physics_process(delta):
 	#test
@@ -175,6 +181,7 @@ func take_dmg(damage: int = 1) -> void:
 	playerState = "aMal";
 	if playerState == "aMal":
 		animation_player.play("hit")
+		AudioManager.playHurtSound()
 	PlayerInfo.healthPoints -= damage
 	if PlayerInfo.healthPoints <= 0:
 		die()
@@ -191,7 +198,16 @@ func die() -> void:
 	if playerState == "dead" :
 		animation_player.play("mort")
 	show_message("GAME OVER !!!")
+	if !is_playing:
+		AudioManager.playDieSound()
+		is_playing = true
+		
+	
 	await get_tree().create_timer(1.5).timeout
+	is_playing = false
+	AudioManager.pauseMusic()
+	AudioManager.playMusic1()
+	
 	PlayerInfo.healthPoints = PlayerInfo.maxHealthPoints
 	PlayerInfo.currentAltitude = 0
 	SceneManager.load_scene("game/Hub.tscn")

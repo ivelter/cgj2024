@@ -15,3 +15,4 @@ func _on_pressed():
 	# print_debug("Clic!")
 	SceneManager.load_scene("game/Hub.tscn")
 	# get_tree().change_scene_to_file("res://scenes/game/Level1.tscn")
+

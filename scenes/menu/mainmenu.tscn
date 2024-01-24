@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://jidvf6c1tkgs"]
+[gd_scene load_steps=10 format=3 uid="uid://jidvf6c1tkgs"]
 
 [ext_resource type="Script" path="res://scripts/ui/playbutton.gd" id="1_cyuk1"]
+[ext_resource type="Script" path="res://scripts/MainMenu.gd" id="1_p61cy"]
 [ext_resource type="Texture2D" uid="uid://cj6jxbeje3l45" path="res://assets/logo/main_title.png" id="2_sw6wy"]
 [ext_resource type="Texture2D" uid="uid://b7og73vbn8ogq" path="res://assets/logo/fond_gris.png" id="3_rpnaq"]
 [ext_resource type="Script" path="res://scripts/ui/LoadGameButton.gd" id="4_ium14"]
@@ -16,6 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_p61cy")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
