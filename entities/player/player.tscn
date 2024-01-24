@@ -412,7 +412,13 @@ bg_color = Color(0.352941, 0.27451, 0.392157, 0.509804)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y00jh"]
 bg_color = Color(0.909804, 0.145098, 0.313726, 1)
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sbcbh"]
+size = Vector2(60, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8r4jc"]
+size = Vector2(45, 75)
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 texture_filter = 1
 position = Vector2(479, 215)
 collision_layer = 3
