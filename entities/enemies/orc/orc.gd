@@ -44,3 +44,6 @@ func take_dmg(damage: int = 1) -> void:
 	health -= damage
 	if health <= 0:
 		queue_free()
+		
+func is_orc():
+	return true;
