@@ -105,7 +105,7 @@ position = Vector2(0, -384)
 position = Vector2(-4, 2)
 
 [node name="Note" parent="." instance=ExtResource("9_xgi2g")]
-position = Vector2(32, 57)
+position = Vector2(54, 84)
 
 [node name="info_sauvegarde" type="Label" parent="."]
 light_mask = 0

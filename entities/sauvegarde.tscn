@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://bvqktfubclml"]
+
+[ext_resource type="Script" path="res://scripts/entities/SaveIcon.gd" id="1_rnfdx"]
+[ext_resource type="Texture2D" uid="uid://5v5deuhluxs0" path="res://assets/sprites/terrain/floppy.png" id="2_wurtd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qe5y"]
+atlas = ExtResource("2_wurtd")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q78e3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qe5y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_727vd"]
+size = Vector2(55.5, 59)
+
+[node name="SaveIcon" type="CharacterBody2D"]
+visibility_layer = 2
+position = Vector2(28, 32)
+script = ExtResource("1_rnfdx")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(85, 41)
+sprite_frames = SubResource("SpriteFrames_q78e3")
+autoplay = "default"
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(87, 59)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(-1.75, -19.5)
+shape = SubResource("RectangleShape2D_727vd")

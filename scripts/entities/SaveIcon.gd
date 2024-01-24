@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var collider = $Area2D
+@onready var collider = $Area2D2
 var isEntered = false 
 
 func _ready():
