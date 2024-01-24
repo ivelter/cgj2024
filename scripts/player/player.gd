@@ -195,6 +195,7 @@ func die() -> void:
 	PlayerInfo.healthPoints = PlayerInfo.maxHealthPoints
 	PlayerInfo.currentAltitude = 0
 	SceneManager.load_scene("game/Hub.tscn")
+	modulate=Color(255,160,122, 0.2)
 
 func update_health_bar() -> void:
 	healthBar.max_value = PlayerInfo.maxHealthPoints
