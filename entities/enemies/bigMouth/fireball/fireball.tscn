@@ -38,7 +38,8 @@ script = ExtResource("1_q7og3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-13, -4)
+position = Vector2(9, -7)
+rotation = -3.15206
 sprite_frames = SubResource("SpriteFrames_gonb2")
 frame_progress = 0.153785
 

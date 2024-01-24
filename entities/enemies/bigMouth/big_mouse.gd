@@ -14,8 +14,6 @@ func _physics_process(delta):
 		velocity = position.direction_to(player.position - position / 2) * speed
 		var dir = (player.position - position).normalized()
 
-		print( dir.x > 0)
-
 		if dir.x > 0:
 			$AnimatedSprite2D.scale.x = 3
 		else:
@@ -45,4 +43,5 @@ func shoot(dir):
 	bullet.position = position
 	
 	bullet.setDirection(dir)
+	bullet.look_at(dir*-1)
 	
