@@ -13,3 +13,7 @@ export_presets.cfg
 .mono/
 data_*/
 mono_crash.*.json
+
+scenes/game/ile0.tscn
+scenes/game/ile1.tscn
+scenes/game/ile2.tscn
