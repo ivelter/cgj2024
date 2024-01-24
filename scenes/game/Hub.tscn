@@ -5,10 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://cpodpha35gsv0" path="res://entities/player/player.tscn" id="2_myl1h"]
 [ext_resource type="Texture2D" uid="uid://bn4q0uw64hoxg" path="res://assets/sprites/terrain/stoneslate.png" id="3_0vvbs"]
 [ext_resource type="Script" path="res://scripts/entities/Grave3.gd" id="4_8e8ei"]
-[ext_resource type="PackedScene" uid="uid://bvqktfubclml" path="res://entities/sauvegarde.tscn" id="6_g4aax"]
+[ext_resource type="PackedScene" path="res://entities/sauvegarde.tscn" id="6_g4aax"]
 [ext_resource type="Script" path="res://scripts/entities/Grave2.gd" id="6_supin"]
 [ext_resource type="PackedScene" uid="uid://cjnc40l5nv2wy" path="res://entities/level_transition_portal.tscn" id="8_8f621"]
-[ext_resource type="PackedScene" uid="uid://bgd6lf07huomn" path="res://entities/note.tscn" id="9_xgi2g"]
+[ext_resource type="PackedScene" path="res://entities/note.tscn" id="9_xgi2g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rgx5u"]
 atlas = ExtResource("3_0vvbs")
@@ -110,19 +110,19 @@ position = Vector2(32, 57)
 [node name="info_sauvegarde" type="Label" parent="."]
 light_mask = 0
 texture_filter = 1
-offset_left = -453.0
-offset_top = -445.0
-offset_right = -229.0
-offset_bottom = -396.0
-text = "Toucher la cartouche
-pour sauvegarder"
+offset_left = -561.0
+offset_top = -399.0
+offset_right = -337.0
+offset_bottom = -350.0
+text = "Interagir avec la cartouche
+pour sauvegarder."
 
 [node name="info_sauvegarde2" type="Label" parent="."]
 light_mask = 0
 texture_filter = 1
-offset_left = -756.0
-offset_top = -133.0
-offset_right = -532.0
-offset_bottom = -84.0
-text = "Il faut toucher le livre
-pour lire la tablette"
+offset_left = 260.0
+offset_top = -242.0
+offset_right = 484.0
+offset_bottom = -193.0
+text = "Interagir avec les tablettes
+pour les lire."
