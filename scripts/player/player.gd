@@ -7,7 +7,6 @@ const SPEED = 20000
 var walkingSpeed = 1.0
 var directionOfPlayer = "up" 
 var playerState = "idle"
-var arc = false
 var chest = null
 var up = false
 var left = false
@@ -168,8 +167,8 @@ func _on_area_2d_body_exited(body):
 
 func open(chest):
 	if chest != null:
-		arc = true
-		print("arc obtenu")
+		print("vie obtenu")
+		set_health(3)
 		chest = null
 
 func take_dmg(damage: int = 1) -> void:
