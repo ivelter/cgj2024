@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var animation_player = $AnimatedSprite2D
 @onready var hurtBox = $Hurtbox
 @onready var healthBar = $HealthBar
-const SPEED = 20000
+const SPEED = 25000
 var walkingSpeed = 1.0
 var directionOfPlayer = "up" 
 var playerState = "idle"
@@ -195,6 +195,7 @@ func die() -> void:
 	PlayerInfo.healthPoints = PlayerInfo.maxHealthPoints
 	PlayerInfo.currentAltitude = 0
 	SceneManager.load_scene("game/Hub.tscn")
+	modulate=Color(255,160,122, 0.2)
 
 func update_health_bar() -> void:
 	healthBar.max_value = PlayerInfo.maxHealthPoints
