@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://m4ddsauebl5f"]
+[gd_scene load_steps=15 format=3 uid="uid://m4ddsauebl5f"]
 
 [ext_resource type="TileSet" uid="uid://wjsng8xcnmrd" path="res://assets/tilesets/ile0.tres" id="1_bfp56"]
 [ext_resource type="Texture2D" uid="uid://n8wnk6d7sju7" path="res://assets/sprites/terrain/sky1.png" id="2_766am"]
@@ -6,6 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://cpodpha35gsv0" path="res://entities/player/player.tscn" id="5_30xhy"]
 [ext_resource type="PackedScene" path="res://entities/level_transition_portal.tscn" id="5_ckj4a"]
 [ext_resource type="Texture2D" uid="uid://l07mi10hft66" path="res://assets/sprites/terrain/tilesDecors2Coffre.png" id="6_xf3i6"]
+[ext_resource type="PackedScene" uid="uid://bp80nj24i018w" path="res://entities/enemies/skeleton/skeleton.tscn" id="7_f80tb"]
+[ext_resource type="PackedScene" uid="uid://bsu5m6j1kcpi0" path="res://entities/enemies/ange/ange.tscn" id="8_lcm48"]
+[ext_resource type="PackedScene" uid="uid://c3cias6fmcxll" path="res://entities/enemies/orc/orc.tscn" id="9_8fvv4"]
+[ext_resource type="PackedScene" uid="uid://be2pepqfydh5q" path="res://entities/enemies/bigMouth/big_mouth.tscn" id="10_wnw33"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dh2ai"]
 texture = ExtResource("6_xf3i6")
@@ -2624,6 +2628,7 @@ size = Vector2(34, 39.6898)
 [node name="Ile1" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
 scale = Vector2(3, 3)
 tile_set = ExtResource("1_bfp56")
 format = 2
@@ -2663,3 +2668,72 @@ sprite_frames = SubResource("SpriteFrames_5b3qy")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D2/Area2D" groups=["chest"]]
 position = Vector2(0.5, 5.95347)
 shape = SubResource("RectangleShape2D_2exii")
+
+[node name="skeleton" parent="." instance=ExtResource("7_f80tb")]
+position = Vector2(4730, 6457)
+
+[node name="skeleton2" parent="." instance=ExtResource("7_f80tb")]
+position = Vector2(4676, 6508)
+
+[node name="skeleton3" parent="." instance=ExtResource("7_f80tb")]
+position = Vector2(4730, 6555)
+
+[node name="skeleton4" parent="." instance=ExtResource("7_f80tb")]
+position = Vector2(4774, 6505)
+
+[node name="ange" parent="." instance=ExtResource("8_lcm48")]
+position = Vector2(4493, 4979)
+
+[node name="orc" parent="." instance=ExtResource("9_8fvv4")]
+position = Vector2(5973, 5327)
+
+[node name="skeleton5" parent="." instance=ExtResource("7_f80tb")]
+position = Vector2(5428, 4677)
+
+[node name="skeleton6" parent="." instance=ExtResource("7_f80tb")]
+position = Vector2(5729, 4718)
+
+[node name="skeleton7" parent="." instance=ExtResource("7_f80tb")]
+position = Vector2(5036, 4677)
+
+[node name="skeleton8" parent="." instance=ExtResource("7_f80tb")]
+position = Vector2(5870, 6113)
+
+[node name="skeleton9" parent="." instance=ExtResource("7_f80tb")]
+position = Vector2(5938, 6031)
+
+[node name="skeleton10" parent="." instance=ExtResource("7_f80tb")]
+position = Vector2(5970, 6111)
+
+[node name="skeleton11" parent="." instance=ExtResource("7_f80tb")]
+position = Vector2(6034, 6020)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("10_wnw33")]
+position = Vector2(2855, 5872)
+
+[node name="ange2" parent="." instance=ExtResource("8_lcm48")]
+position = Vector2(1508, 4488)
+
+[node name="CharacterBody2D2" parent="." instance=ExtResource("10_wnw33")]
+position = Vector2(412, 5530)
+
+[node name="orc2" parent="." instance=ExtResource("9_8fvv4")]
+position = Vector2(1756, 6208)
+
+[node name="skeleton12" parent="." instance=ExtResource("7_f80tb")]
+position = Vector2(1748, 5630)
+
+[node name="skeleton13" parent="." instance=ExtResource("7_f80tb")]
+position = Vector2(1705, 5573)
+
+[node name="skeleton14" parent="." instance=ExtResource("7_f80tb")]
+position = Vector2(1772, 5565)
+
+[node name="skeleton15" parent="." instance=ExtResource("7_f80tb")]
+position = Vector2(2318, 5301)
+
+[node name="CharacterBody2D3" parent="." instance=ExtResource("10_wnw33")]
+position = Vector2(3150, 5168)
+
+[node name="orc3" parent="." instance=ExtResource("9_8fvv4")]
+position = Vector2(3736, 6070)
