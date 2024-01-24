@@ -18,4 +18,6 @@ La repo de l'équipe Re:Weathered de l'édition 2024 de la Code Game Jam, sur le
 Vous pouvez interagir avec les éléments du hub principal (la disquette sert à sauvegarder, et le reste... nous vous laissons découvrir)
 
 ## Crédits des assets utilisés
-- à remplir
+- [Szadi Art - RPG Main Character](https://szadiart.itch.io/rpg-main-character)
+- [Superdark - Enchanted forest characters](https://superdark.itch.io/enchanted-forest-characters)
+- [Buch - The field of the floating islands](https://opengameart.org/content/the-field-of-the-floating-islands)
