@@ -13,7 +13,7 @@ func _physics_process(delta):
 			position += (player.position - position).normalized() * delta * speed
 			if player.position > position:
 				scale.x = 1
-			elif player.position < position:
+			else:
 				scale.x = -1
 
 			if(canAttack):
