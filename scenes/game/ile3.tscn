@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://wjsng8xcnmrd" path="res://assets/tilesets/ile0.tres" id="1_haoqn"]
 [ext_resource type="PackedScene" uid="uid://cpodpha35gsv0" path="res://entities/player/player.tscn" id="2_2jjfi"]
-[ext_resource type="PackedScene" uid="uid://cjnc40l5nv2wy" path="res://entities/level_transition_portal.tscn" id="3_kjj8f"]
+[ext_resource type="PackedScene" path="res://entities/level_transition_portal.tscn" id="3_kjj8f"]
 [ext_resource type="Script" path="res://scripts/entities/GraveUnlock2.gd" id="4_ih6d6"]
 [ext_resource type="Texture2D" uid="uid://bn4q0uw64hoxg" path="res://assets/sprites/terrain/stoneslate.png" id="5_80myx"]
 [ext_resource type="Texture2D" uid="uid://n8wnk6d7sju7" path="res://assets/sprites/terrain/sky1.png" id="7_hg5bv"]
