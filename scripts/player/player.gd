@@ -19,8 +19,7 @@ var enemyR = null
 var enemyD = null
 
 func show_message(text):
-	$DialogueBox/GameOver.text = text
-	$DialogueBox/GameOver.show()
+	DialogueBox.display_text(text)
 
 func _process(delta):
 	# Vérifiez si le CharacterBody2D est en collision
@@ -194,9 +193,9 @@ func die() -> void:
 	playerState = "dead"
 	if playerState == "dead" :
 		animation_player.play("mort")
-	await get_tree().create_timer(1.5).timeout
 	show_message("GAME OVER !!!")
-	PlayerInfo.healthPoints = 3
+	await get_tree().create_timer(1.5).timeout
+	PlayerInfo.healthPoints = PlayerInfo.maxHealthPoints
 	SceneManager.load_scene("game/Hub.tscn")
 
 func update_health_bar() -> void:

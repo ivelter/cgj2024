@@ -58,6 +58,16 @@ func display_diary():
 	textBox.text = (diary_content)  
 	displayBox()
 
+func display_game_over():
+	getRefOfDialogue()
+	textBox.text = "Game Over!"
+	displayBox()
+
+func display_text(txt: String):
+	getRefOfDialogue()
+	textBox.text = txt 
+	displayBox()
+
 func setPlayerRef(node: Node):
 	playerRef = node
 
