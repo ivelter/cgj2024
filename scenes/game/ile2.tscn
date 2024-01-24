@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://dqxrxlnxbnj2a" path="res://assets/tilesets/ile.tres" id="1_fi3pe"]
 [ext_resource type="PackedScene" uid="uid://cpodpha35gsv0" path="res://entities/player/player.tscn" id="2_delwf"]
-[ext_resource type="PackedScene" uid="uid://cjnc40l5nv2wy" path="res://entities/level_transition_portal.tscn" id="2_w54u8"]
+[ext_resource type="PackedScene" path="res://entities/level_transition_portal.tscn" id="2_w54u8"]
 [ext_resource type="PackedScene" uid="uid://c3cias6fmcxll" path="res://entities/enemies/orc/orc.tscn" id="3_dmir5"]
 [ext_resource type="PackedScene" uid="uid://be2pepqfydh5q" path="res://entities/enemies/bigMouth/big_mouth.tscn" id="4_xctdb"]
 [ext_resource type="PackedScene" uid="uid://bp80nj24i018w" path="res://entities/enemies/skeleton/skeleton.tscn" id="6_0djtd"]
