@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cjgww3etryfy0"]
+[gd_scene load_steps=11 format=3 uid="uid://cjgww3etryfy0"]
 
 [ext_resource type="TileSet" uid="uid://wjsng8xcnmrd" path="res://assets/tilesets/ile0.tres" id="1_haoqn"]
 [ext_resource type="PackedScene" uid="uid://cpodpha35gsv0" path="res://entities/player/player.tscn" id="2_2jjfi"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cjnc40l5nv2wy" path="res://entities/level_transition_portal.tscn" id="3_kjj8f"]
 [ext_resource type="Script" path="res://scripts/entities/GraveUnlock2.gd" id="4_ih6d6"]
 [ext_resource type="Texture2D" uid="uid://bn4q0uw64hoxg" path="res://assets/sprites/terrain/stoneslate.png" id="5_80myx"]
+[ext_resource type="Texture2D" uid="uid://n8wnk6d7sju7" path="res://assets/sprites/terrain/sky1.png" id="7_hg5bv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rgx5u"]
 atlas = ExtResource("5_80myx")
@@ -65,3 +66,18 @@ position = Vector2(2, 18)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GraveUnlock2/Area2D"]
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_8o7mq")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -2
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1596.0
+offset_top = -1586.0
+offset_right = 2457.0
+offset_bottom = 2025.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.988722, 1.02402)
+texture = ExtResource("7_hg5bv")
