@@ -4,6 +4,7 @@ var speed = 200
 var health = 1
 var player_chase = false
 var player = null
+var canAttack = true;
 
 func _physics_process(delta):
 	
@@ -17,6 +18,16 @@ func _physics_process(delta):
 			$AnimatedSprite2D.scale.x = 3
 		else:
 			$AnimatedSprite2D.scale.x = -3
+			
+		if(canAttack):
+				if((max(player.position.x,position.x) - min(player.position.x,position.x)) < 32 && (max(player.position.y,position.y) - min(player.position.y,position.y)) < 32):
+					player.take_dmg()
+					canAttack = false;
+					$Timer.start()
+					if get_tree() != null:
+						await get_tree().create_timer(3).timeout
+					$Timer.timeout
+					canAttack = true;
 			
 	else:
 		$AnimatedSprite2D.play("idling")
