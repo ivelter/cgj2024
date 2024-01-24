@@ -4,7 +4,7 @@ var ilesSelection = [
 	"ile0",
 	"ile1",
 	"ile2",
-	"ile5"
+	"ile3"
 ]
 var previousScene = "null"
 
