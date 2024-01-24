@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://n8wnk6d7sju7" path="res://assets/sprites/terrain/sky1.png" id="2_766am"]
 [ext_resource type="Texture2D" uid="uid://bscovfaox3mpe" path="res://assets/sprites/terrain/chest.png" id="3_go4vy"]
 [ext_resource type="PackedScene" uid="uid://cpodpha35gsv0" path="res://entities/player/player.tscn" id="5_30xhy"]
-[ext_resource type="PackedScene" uid="uid://cjnc40l5nv2wy" path="res://entities/level_transition_portal.tscn" id="5_ckj4a"]
+[ext_resource type="PackedScene" path="res://entities/level_transition_portal.tscn" id="5_ckj4a"]
 [ext_resource type="Texture2D" uid="uid://l07mi10hft66" path="res://assets/sprites/terrain/tilesDecors2Coffre.png" id="6_xf3i6"]
 [ext_resource type="PackedScene" uid="uid://bp80nj24i018w" path="res://entities/enemies/skeleton/skeleton.tscn" id="7_f80tb"]
 [ext_resource type="PackedScene" uid="uid://bsu5m6j1kcpi0" path="res://entities/enemies/ange/ange.tscn" id="8_lcm48"]
