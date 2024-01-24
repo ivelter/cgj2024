@@ -1,12 +1,11 @@
-[gd_scene load_steps=24 format=3 uid="uid://c6rc7jq8jqwvq"]
+[gd_scene load_steps=13 format=3 uid="uid://c6rc7jq8jqwvq"]
 
 [ext_resource type="TileSet" uid="uid://wjsng8xcnmrd" path="res://assets/tilesets/ile0.tres" id="1_60w02"]
-[ext_resource type="Script" path="res://scripts/coupe_doree.gd" id="5_jf33o"]
+[ext_resource type="PackedScene" uid="uid://cjnc40l5nv2wy" path="res://entities/level_transition_portal.tscn" id="4_2vnhw"]
 [ext_resource type="Texture2D" uid="uid://n8wnk6d7sju7" path="res://assets/sprites/terrain/sky1.png" id="6_isy8g"]
 [ext_resource type="Texture2D" uid="uid://bscovfaox3mpe" path="res://assets/sprites/terrain/chest.png" id="7_jd70f"]
 [ext_resource type="PackedScene" uid="uid://c3cias6fmcxll" path="res://entities/enemies/orc/orc.tscn" id="7_swq6x"]
 [ext_resource type="PackedScene" uid="uid://be2pepqfydh5q" path="res://entities/enemies/bigMouth/big_mouth.tscn" id="8_1d1ah"]
-[ext_resource type="Texture2D" uid="uid://ddw4q7myd4l2a" path="res://assets/sprites/terrain/portail.png" id="8_g275o"]
 [ext_resource type="Texture2D" uid="uid://l07mi10hft66" path="res://assets/sprites/terrain/tilesDecors2Coffre.png" id="9_p1mja"]
 [ext_resource type="PackedScene" uid="uid://cpodpha35gsv0" path="res://entities/player/player.tscn" id="9_x2pgw"]
 
@@ -23,73 +22,6 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hjcdc"]
 size = Vector2(34, 39.6898)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ffcg7"]
-atlas = ExtResource("8_g275o")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_22jhr"]
-atlas = ExtResource("8_g275o")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k5awq"]
-atlas = ExtResource("8_g275o")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_356bn"]
-atlas = ExtResource("8_g275o")
-region = Rect2(192, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hji0a"]
-atlas = ExtResource("8_g275o")
-region = Rect2(256, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ce8by"]
-atlas = ExtResource("8_g275o")
-region = Rect2(320, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n81w0"]
-atlas = ExtResource("8_g275o")
-region = Rect2(384, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_syqaq"]
-atlas = ExtResource("8_g275o")
-region = Rect2(448, 0, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_gykao"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ffcg7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_22jhr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k5awq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_356bn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hji0a")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ce8by")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n81w0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_syqaq")
-}],
-"loop": true,
-"name": &"default",
-"speed": 10.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iqo4c"]
-size = Vector2(36.9432, 37.1378)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8cdi7"]
 texture = ExtResource("9_p1mja")
@@ -2735,20 +2667,7 @@ sprite_frames = SubResource("SpriteFrames_7xngj")
 position = Vector2(0.5, 5.95347)
 shape = SubResource("RectangleShape2D_hjcdc")
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
-texture_filter = 1
-position = Vector2(1150, -163)
-scale = Vector2(1.92187, 2.21094)
-sprite_frames = SubResource("SpriteFrames_gykao")
-autoplay = "default"
-frame_progress = 0.0485165
-script = ExtResource("5_jf33o")
-
-[node name="Area2D" type="Area2D" parent="AnimatedSprite2D2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D2/Area2D"]
-position = Vector2(-0.780518, 8.56889)
-shape = SubResource("RectangleShape2D_iqo4c")
+[node name="LevelTransitionPortal" parent="." instance=ExtResource("4_2vnhw")]
 
 [node name="Player" parent="." instance=ExtResource("9_x2pgw")]
 position = Vector2(792, 1132)
@@ -2768,4 +2687,3 @@ layer_0/tile_data = PackedInt32Array(983048, 0, 1, 983049, 0, 1, 983050, 0, 1, 9
 
 [connection signal="body_entered" from="AnimatedSprite2D/Area2D" to="Player" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="AnimatedSprite2D/Area2D" to="Player" method="_on_area_2d_body_exited"]
-[connection signal="body_entered" from="AnimatedSprite2D2/Area2D" to="AnimatedSprite2D2" method="_on_area_2d_coupe"]
