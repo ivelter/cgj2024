@@ -64,19 +64,19 @@ func animationInteractionUpdate(anim_name: String = "") -> void:
 			match (directionOfPlayer):
 				"up":
 					animation_player.play("up_attack")
-					if(up):
+					if(up && enemyU != null):
 						enemyU.take_dmg()
 				"down":
 					animation_player.play("down_attack")
-					if(down):
+					if(down and enemyD != null):
 						enemyD.take_dmg()
 				"left":
 					animation_player.play("left_attack")
-					if(left):
+					if(left and enemyL !=null):
 						enemyL.take_dmg()
 				"right":
 					animation_player.play("left_attack")
-					if(right):
+					if(right and enemyR != null):
 						enemyR.take_dmg()
 		elif interacted():
 			playerState = "interacting"
@@ -203,7 +203,7 @@ func update_health_bar() -> void:
 	
 	
 func _on_up_area_body_entered(body):
-	if(body.has_method("is_orc")):
+	if(body.has_method("is_enemy")):
 		up = true
 		enemyU = body
 	else:
@@ -211,7 +211,7 @@ func _on_up_area_body_entered(body):
 
 
 func _on_down_area_body_entered(body):
-	if(body.has_method("is_orc")):
+	if(body.has_method("is_enemy")):
 		down = true
 		enemyD = body
 	else:
@@ -219,7 +219,7 @@ func _on_down_area_body_entered(body):
 
 
 func _on_left_area_body_entered(body):
-	if(body.has_method("is_orc")):
+	if(body.has_method("is_enemy")):
 		left = true
 		enemyL = body
 	else:
@@ -227,7 +227,7 @@ func _on_left_area_body_entered(body):
 
 
 func _on_right_area_body_entered(body):
-	if(body.has_method("is_orc")):
+	if(body.has_method("is_enemy")):
 		right = true
 		enemyR = body
 	else:
