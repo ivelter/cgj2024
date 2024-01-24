@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 var speed = 200
+var health = 1
 var player_chase = false
 var player = null
 
@@ -28,3 +29,11 @@ func _on_colision_shape_body_entered(body):
 func _on_colision_shape_body_exited(body):
 	player = null
 	player_chase = false;
+	
+func take_dmg(damage: int = 1) -> void:
+	health -= damage
+	if health <= 0:
+		queue_free()
+		
+func is_enemy():
+	return true;

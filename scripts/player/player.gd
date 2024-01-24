@@ -64,19 +64,19 @@ func animationInteractionUpdate(anim_name: String = "") -> void:
 			match (directionOfPlayer):
 				"up":
 					animation_player.play("up_attack")
-					if(up):
+					if(up && enemyU != null):
 						enemyU.take_dmg()
 				"down":
 					animation_player.play("down_attack")
-					if(down):
+					if(down and enemyD != null):
 						enemyD.take_dmg()
 				"left":
 					animation_player.play("left_attack")
-					if(left):
+					if(left and enemyL !=null):
 						enemyL.take_dmg()
 				"right":
 					animation_player.play("left_attack")
-					if(right):
+					if(right and enemyR != null):
 						enemyR.take_dmg()
 		elif interacted():
 			playerState = "interacting"
