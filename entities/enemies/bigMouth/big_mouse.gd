@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+var health = 1 
 var speed = 100
 var player_chase = false
 var player = null
@@ -45,5 +46,13 @@ func shoot(dir):
 	
 	bullet.setDirection(dir)
 	bullet.look_at(dir*-1)
+	
+func take_dmg(damage: int = 1) -> void:
+	health -= damage
+	if health <= 0:
+		queue_free()
+		
+func is_enemy():
+	return true;
 	
 
