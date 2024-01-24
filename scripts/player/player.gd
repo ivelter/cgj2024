@@ -194,6 +194,7 @@ func die() -> void:
 	show_message("GAME OVER !!!")
 	await get_tree().create_timer(1.5).timeout
 	PlayerInfo.healthPoints = PlayerInfo.maxHealthPoints
+	PlayerInfo.currentAltitude = 0
 	SceneManager.load_scene("game/Hub.tscn")
 
 func update_health_bar() -> void:

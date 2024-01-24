@@ -9,5 +9,6 @@ func _physics_process(delta):
 	pass
 
 func on_portal_entered(body: Node):
+	PlayerInfo.currentAltitude += 50
 	SceneManager.change_scene()
 	#SceneManager.load_scene("game/ile0.tscn")
