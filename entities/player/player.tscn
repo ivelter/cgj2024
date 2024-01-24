@@ -69,6 +69,10 @@ region = Rect2(0, 64, 64, 64)
 atlas = ExtResource("4_pw3kn")
 region = Rect2(64, 64, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftvn8"]
+atlas = ExtResource("7_7n4b4")
+region = Rect2(64, 0, 64, 64)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_sru21"]
 atlas = ExtResource("5_svamw")
 region = Rect2(0, 0, 64, 64)
@@ -104,10 +108,6 @@ region = Rect2(0, 64, 64, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_c6whk"]
 atlas = ExtResource("7_7n4b4")
 region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ftvn8"]
-atlas = ExtResource("7_7n4b4")
-region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2dau0"]
 atlas = ExtResource("7_7n4b4")
@@ -145,6 +145,10 @@ region = Rect2(0, 64, 64, 64)
 atlas = ExtResource("8_pqlsi")
 region = Rect2(64, 64, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_21pmc"]
+atlas = ExtResource("10_gbdaa")
+region = Rect2(0, 0, 64, 64)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_obl77"]
 atlas = ExtResource("9_5e32d")
 region = Rect2(0, 0, 64, 64)
@@ -156,10 +160,6 @@ region = Rect2(64, 0, 64, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_hrf34"]
 atlas = ExtResource("9_5e32d")
 region = Rect2(0, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_21pmc"]
-atlas = ExtResource("10_gbdaa")
-region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5lpnx"]
 atlas = ExtResource("10_gbdaa")
@@ -261,6 +261,17 @@ animations = [{
 "speed": 10.0
 }, {
 "frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_vgmmn")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_ftvn8")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_sru21")
 }, {
@@ -339,6 +350,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_vgmmn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpu6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21pmc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpu6i")
+}],
+"loop": true,
+"name": &"mort",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_obl77")
 }, {
 "duration": 1.0,
@@ -398,17 +426,17 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_porep"]
 size = Vector2(37, 40)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryj7v"]
-size = Vector2(66.5, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e8x0y"]
-size = Vector2(19.75, 53)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ivq8"]
 bg_color = Color(0.352941, 0.27451, 0.392157, 0.509804)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y00jh"]
 bg_color = Color(0.909804, 0.145098, 0.313726, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hfyxv"]
+size = Vector2(62, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r5yw1"]
+size = Vector2(40.5, 43)
 
 [node name="Player" type="CharacterBody2D"]
 texture_filter = 1
@@ -424,38 +452,13 @@ position = Vector2(-4, 2)
 position = Vector2(-1.99999, -20)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_0qt2h")
-animation = &"up_walk"
+animation = &"mort"
 autoplay = "down_idle"
 
 [node name="Hurtbox" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -1)
 shape = SubResource("RectangleShape2D_porep")
 debug_color = Color(0.67451, 0.278431, 0.203922, 0.419608)
-
-[node name="UpInteractCollision" type="CollisionShape2D" parent="."]
-texture_filter = 1
-position = Vector2(-0.5, -32)
-shape = SubResource("RectangleShape2D_ryj7v")
-disabled = true
-debug_color = Color(0.239216, 0.529412, 0.4, 0.419608)
-
-[node name="DownInteractCollision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 28)
-shape = SubResource("RectangleShape2D_ryj7v")
-disabled = true
-debug_color = Color(0.239216, 0.529412, 0.4, 0.419608)
-
-[node name="LeftInteractCollision" type="CollisionShape2D" parent="."]
-position = Vector2(-30, -2.5)
-shape = SubResource("RectangleShape2D_e8x0y")
-disabled = true
-debug_color = Color(0.329412, 0.407843, 0.882353, 0.419608)
-
-[node name="RightInteractCollision" type="CollisionShape2D" parent="."]
-position = Vector2(27, -3)
-shape = SubResource("RectangleShape2D_e8x0y")
-disabled = true
-debug_color = Color(0.329412, 0.407843, 0.882353, 0.419608)
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 offset_left = -555.0
@@ -499,3 +502,43 @@ offset_top = 104.0
 offset_right = 1068.0
 offset_bottom = 574.0
 theme_override_font_sizes/normal_font_size = 24
+
+[node name="GameOver" type="Label" parent="DialogueBox"]
+layout_mode = 0
+offset_left = 242.0
+offset_top = 81.0
+offset_right = 938.0
+offset_bottom = 440.0
+theme_override_font_sizes/font_size = 64
+text = "GAME OVER !!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DownArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DownArea"]
+position = Vector2(2, 38)
+shape = SubResource("RectangleShape2D_hfyxv")
+
+[node name="LeftArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftArea"]
+position = Vector2(-34, -5)
+shape = SubResource("RectangleShape2D_r5yw1")
+
+[node name="UpArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UpArea"]
+position = Vector2(0, -48)
+shape = SubResource("RectangleShape2D_hfyxv")
+
+[node name="RightArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightArea"]
+position = Vector2(36, -5)
+shape = SubResource("RectangleShape2D_r5yw1")
+
+[connection signal="body_entered" from="DownArea" to="." method="_on_down_area_body_entered"]
+[connection signal="body_entered" from="LeftArea" to="." method="_on_left_area_body_entered"]
+[connection signal="body_entered" from="UpArea" to="." method="_on_up_area_body_entered"]
+[connection signal="body_entered" from="RightArea" to="." method="_on_right_area_body_entered"]

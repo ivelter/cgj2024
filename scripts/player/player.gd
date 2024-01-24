@@ -8,8 +8,15 @@ var walkingSpeed = 1.0
 var directionOfPlayer = "up" 
 var playerState = "idle"
 var arc = false
-var canOpenChest = false
-var chest = null;
+var chest = null
+var up = false
+var left = false
+var right = false
+var down = false
+var enemyU = null
+var enemyL = null
+var enemyR = null
+var enemyD = null
 
 func show_message(text):
 	$DialogueBox/GameOver.text = text
@@ -56,17 +63,24 @@ func interacted() -> bool:
 func animationInteractionUpdate(anim_name: String = "") -> void:
 	if Input.is_anything_pressed():
 		if swung_sword():
-			playerState = "swung_sword"
-			
+			playerState = "swung_sword"			
 			match (directionOfPlayer):
 				"up":
 					animation_player.play("up_attack")
+					if(up):
+						enemyU.take_dmg()
 				"down":
 					animation_player.play("down_attack")
+					if(down):
+						enemyD.take_dmg()
 				"left":
 					animation_player.play("left_attack")
+					if(left):
+						enemyL.take_dmg()
 				"right":
 					animation_player.play("left_attack")
+					if(right):
+						enemyR.take_dmg()
 		elif interacted():
 			playerState = "interacting"
 			animation_player.play("left_pick_up")
@@ -190,5 +204,33 @@ func update_health_bar() -> void:
 	healthBar.value = PlayerInfo.healthPoints
 	
 	
+func _on_up_area_body_entered(body):
+	if(body.has_method("is_orc")):
+		up = true
+		enemyU = body
+	else:
+		up = false
 
 
+func _on_down_area_body_entered(body):
+	if(body.has_method("is_orc")):
+		down = true
+		enemyD = body
+	else:
+		down = false
+
+
+func _on_left_area_body_entered(body):
+	if(body.has_method("is_orc")):
+		left = true
+		enemyL = body
+	else:
+		left = false
+
+
+func _on_right_area_body_entered(body):
+	if(body.has_method("is_orc")):
+		right = true
+		enemyR = body
+	else:
+		right = false
