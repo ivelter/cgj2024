@@ -71,6 +71,10 @@ region = Rect2(0, 64, 64, 64)
 atlas = ExtResource("4_pw3kn")
 region = Rect2(64, 64, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftvn8"]
+atlas = ExtResource("7_7n4b4")
+region = Rect2(64, 0, 64, 64)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_sru21"]
 atlas = ExtResource("5_svamw")
 region = Rect2(0, 0, 64, 64)
@@ -106,10 +110,6 @@ region = Rect2(0, 64, 64, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_c6whk"]
 atlas = ExtResource("7_7n4b4")
 region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ftvn8"]
-atlas = ExtResource("7_7n4b4")
-region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2dau0"]
 atlas = ExtResource("7_7n4b4")
@@ -147,6 +147,10 @@ region = Rect2(0, 64, 64, 64)
 atlas = ExtResource("8_pqlsi")
 region = Rect2(64, 64, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_21pmc"]
+atlas = ExtResource("10_gbdaa")
+region = Rect2(0, 0, 64, 64)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_obl77"]
 atlas = ExtResource("9_5e32d")
 region = Rect2(0, 0, 64, 64)
@@ -158,10 +162,6 @@ region = Rect2(64, 0, 64, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_hrf34"]
 atlas = ExtResource("9_5e32d")
 region = Rect2(0, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_21pmc"]
-atlas = ExtResource("10_gbdaa")
-region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5lpnx"]
 atlas = ExtResource("10_gbdaa")
@@ -263,6 +263,17 @@ animations = [{
 "speed": 12.0
 }, {
 "frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_vgmmn")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_ftvn8")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_sru21")
 }, {
@@ -338,6 +349,23 @@ animations = [{
 "loop": false,
 "name": &"left_walk",
 "speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgmmn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpu6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21pmc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpu6i")
+}],
+"loop": true,
+"name": &"mort",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -426,7 +454,7 @@ position = Vector2(-4, 2)
 position = Vector2(-1.99999, -20)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_0qt2h")
-animation = &"down_attack"
+animation = &"hit"
 autoplay = "down_idle"
 
 [node name="Hurtbox" type="CollisionShape2D" parent="."]

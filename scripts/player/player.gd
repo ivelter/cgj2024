@@ -174,7 +174,7 @@ func _on_area_2d_body_exited(body):
 func open(chest):
 	if chest != null:
 		print("vie obtenu")
-		set_health(3)
+		set_health(5)
 		chest = null
 
 func take_dmg(damage: int = 1) -> void:
@@ -187,7 +187,7 @@ func take_dmg(damage: int = 1) -> void:
 		die()
 	update_health_bar()
 
-func set_health(health: int = 3) -> void:
+func set_health(health: int = 5) -> void:
 	PlayerInfo.healthPoints = health 
 	if health <= 0:
 		die()
