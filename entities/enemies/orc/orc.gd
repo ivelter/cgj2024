@@ -10,7 +10,7 @@ func _physics_process(delta):
 	if player != null:
 		if player_chase:
 			$AnimatedSprite2D.play("runing")
-			position += (player.position - position)/speed
+			position += (player.position - position).normalized() * delta * speed
 			if player.position > position:
 				scale.x = 1
 			elif player.position < position:

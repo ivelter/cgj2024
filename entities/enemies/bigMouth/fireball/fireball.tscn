@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://m46uvfpnob3q"]
+
+[ext_resource type="Script" path="res://entities/enemies/bigMouth/fireball/fireball.gd" id="1_q7og3"]
+[ext_resource type="Texture2D" uid="uid://dceele6xx6qxq" path="res://assets/sprites/enemies/FB001.png" id="2_602f6"]
+[ext_resource type="Texture2D" uid="uid://d32i02261janj" path="res://assets/sprites/enemies/FB002.png" id="3_61iy4"]
+[ext_resource type="Texture2D" uid="uid://c6m27ptff22ib" path="res://assets/sprites/enemies/FB003.png" id="4_45nh7"]
+[ext_resource type="Texture2D" uid="uid://dpl0e5agrtdw3" path="res://assets/sprites/enemies/FB004.png" id="5_k484b"]
+[ext_resource type="Texture2D" uid="uid://f8w214164kjq" path="res://assets/sprites/enemies/FB005.png" id="6_wbx83"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gonb2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_602f6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_61iy4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_45nh7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_k484b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wbx83")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bw0as"]
+
+[node name="CharacterBody2D2" type="CharacterBody2D"]
+position = Vector2(123, 86)
+script = ExtResource("1_q7og3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-13, -4)
+sprite_frames = SubResource("SpriteFrames_gonb2")
+frame_progress = 0.153785
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-2, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_bw0as")

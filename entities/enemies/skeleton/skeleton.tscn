@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://bp80nj24i018w"]
 
-[ext_resource type="Script" path="res://entities/enemies/ange/ange.gd" id="1_1ukmo"]
+[ext_resource type="Script" path="res://entities/enemies/skeleton/skeleton.gd" id="1_csyte"]
 [ext_resource type="Texture2D" uid="uid://c210cv22rpeqg" path="res://assets/sprites/enemies/0x72_DungeonTilesetII_v1.6.png" id="2_pgch1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_elm0s"]
@@ -101,7 +101,7 @@ radius = 221.443
 
 [node name="skeleton" type="CharacterBody2D"]
 position = Vector2(18, 155)
-script = ExtResource("1_1ukmo")
+script = ExtResource("1_csyte")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
