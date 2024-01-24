@@ -27,11 +27,9 @@ func _process(delta):
 		# Obtenez le corps de collision
 	if get_last_slide_collision() != null:
 		var colliding_body = get_last_slide_collision().get_collider()
-		#print(colliding_body.name)
-		# Vérifiez si le corps de collision est un TileMap et s'il a le nom "caca"
-		if colliding_body.name == "SkyTileMap":
-			# Faites quelque chose lorsque la collision avec le TileMap "caca" est détectée
-			die()
+		if(colliding_body != null):
+			if colliding_body.name == "SkyTileMap":
+				die()
 
 # Fonction pour vérifier si le CharacterBody2D est en collision
 ##func is_colliding() -> bool:
