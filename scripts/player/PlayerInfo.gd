@@ -6,7 +6,7 @@ var hasUnlockedStone1
 var hasUnlockedStone2
 var hasUnlockedStone3
 var hasUnlockedDiary
-
+var currentAltitude
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,6 +16,7 @@ func _ready():
 	hasUnlockedStone2 = false
 	hasUnlockedStone3 = false
 	hasUnlockedDiary = false
+	currentAltitude = 0
 
 func checkDiaryUnlock():
 	if hasUnlockedStone1 and hasUnlockedStone2 and hasUnlockedStone3:

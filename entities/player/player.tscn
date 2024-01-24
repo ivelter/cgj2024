@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://cpodpha35gsv0"]
+[gd_scene load_steps=68 format=3 uid="uid://cpodpha35gsv0"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_8jpf7"]
 [ext_resource type="Texture2D" uid="uid://ces2qxlkfc2sp" path="res://assets/sprites/player/szadiart-RPGMainCharacter/_down attack.png" id="2_wdehm"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://cr7lawtxchj66" path="res://assets/sprites/player/szadiart-RPGMainCharacter/_up idle.png" id="10_gbdaa"]
 [ext_resource type="Texture2D" uid="uid://de243skauae18" path="res://assets/sprites/player/szadiart-RPGMainCharacter/_up walk.png" id="11_6jd6t"]
 [ext_resource type="Script" path="res://scripts/player/DialogueBox.gd" id="12_2iyof"]
+[ext_resource type="Texture2D" uid="uid://bjmuat4hlpbdh" path="res://assets/sprites/player/altimetre.png" id="13_bmvc2"]
+[ext_resource type="Script" path="res://scripts/player/AltitudeCount.gd" id="14_3v7gc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kc4r2"]
 atlas = ExtResource("2_wdehm")
@@ -69,10 +71,6 @@ region = Rect2(0, 64, 64, 64)
 atlas = ExtResource("4_pw3kn")
 region = Rect2(64, 64, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ftvn8"]
-atlas = ExtResource("7_7n4b4")
-region = Rect2(64, 0, 64, 64)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_sru21"]
 atlas = ExtResource("5_svamw")
 region = Rect2(0, 0, 64, 64)
@@ -108,6 +106,10 @@ region = Rect2(0, 64, 64, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_c6whk"]
 atlas = ExtResource("7_7n4b4")
 region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftvn8"]
+atlas = ExtResource("7_7n4b4")
+region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2dau0"]
 atlas = ExtResource("7_7n4b4")
@@ -145,10 +147,6 @@ region = Rect2(0, 64, 64, 64)
 atlas = ExtResource("8_pqlsi")
 region = Rect2(64, 64, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_21pmc"]
-atlas = ExtResource("10_gbdaa")
-region = Rect2(0, 0, 64, 64)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_obl77"]
 atlas = ExtResource("9_5e32d")
 region = Rect2(0, 0, 64, 64)
@@ -160,6 +158,10 @@ region = Rect2(64, 0, 64, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_hrf34"]
 atlas = ExtResource("9_5e32d")
 region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21pmc"]
+atlas = ExtResource("10_gbdaa")
+region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5lpnx"]
 atlas = ExtResource("10_gbdaa")
@@ -261,17 +263,6 @@ animations = [{
 "speed": 10.0
 }, {
 "frames": [{
-"duration": 2.0,
-"texture": SubResource("AtlasTexture_vgmmn")
-}, {
-"duration": 3.0,
-"texture": SubResource("AtlasTexture_ftvn8")
-}],
-"loop": true,
-"name": &"hit",
-"speed": 5.0
-}, {
-"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_sru21")
 }, {
@@ -350,23 +341,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vgmmn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jpu6i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_21pmc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jpu6i")
-}],
-"loop": true,
-"name": &"mort",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_obl77")
 }, {
 "duration": 1.0,
@@ -426,17 +400,17 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_porep"]
 size = Vector2(37, 40)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryj7v"]
+size = Vector2(66.5, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e8x0y"]
+size = Vector2(19.75, 53)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ivq8"]
 bg_color = Color(0.352941, 0.27451, 0.392157, 0.509804)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y00jh"]
 bg_color = Color(0.909804, 0.145098, 0.313726, 1)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sbcbh"]
-size = Vector2(60, 41)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8r4jc"]
-size = Vector2(45, 75)
 
 [node name="Player" type="CharacterBody2D"]
 texture_filter = 1
@@ -452,14 +426,38 @@ position = Vector2(-4, 2)
 position = Vector2(-1.99999, -20)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_0qt2h")
-animation = &"hit"
+animation = &"up_walk"
 autoplay = "down_idle"
-frame_progress = 0.995271
 
 [node name="Hurtbox" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -1)
 shape = SubResource("RectangleShape2D_porep")
 debug_color = Color(0.67451, 0.278431, 0.203922, 0.419608)
+
+[node name="UpInteractCollision" type="CollisionShape2D" parent="."]
+texture_filter = 1
+position = Vector2(-0.5, -32)
+shape = SubResource("RectangleShape2D_ryj7v")
+disabled = true
+debug_color = Color(0.239216, 0.529412, 0.4, 0.419608)
+
+[node name="DownInteractCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 28)
+shape = SubResource("RectangleShape2D_ryj7v")
+disabled = true
+debug_color = Color(0.239216, 0.529412, 0.4, 0.419608)
+
+[node name="LeftInteractCollision" type="CollisionShape2D" parent="."]
+position = Vector2(-30, -2.5)
+shape = SubResource("RectangleShape2D_e8x0y")
+disabled = true
+debug_color = Color(0.329412, 0.407843, 0.882353, 0.419608)
+
+[node name="RightInteractCollision" type="CollisionShape2D" parent="."]
+position = Vector2(27, -3)
+shape = SubResource("RectangleShape2D_e8x0y")
+disabled = true
+debug_color = Color(0.329412, 0.407843, 0.882353, 0.419608)
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 offset_left = -555.0
@@ -504,33 +502,14 @@ offset_right = 1068.0
 offset_bottom = 574.0
 theme_override_font_sizes/normal_font_size = 24
 
-[node name="DownArea" type="Area2D" parent="."]
+[node name="Altimetre" type="Sprite2D" parent="."]
+position = Vector2(310, -286)
+scale = Vector2(0.0703125, 0.0703125)
+texture = ExtResource("13_bmvc2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DownArea"]
-position = Vector2(0, 25)
-shape = SubResource("RectangleShape2D_sbcbh")
-debug_color = Color(0, 0.6, 0.701961, 0.419608)
-
-[node name="UpArea" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="UpArea"]
-position = Vector2(0, -52.5)
-shape = SubResource("RectangleShape2D_sbcbh")
-debug_color = Color(0, 0.6, 0.701961, 0.419608)
-
-[node name="RightArea" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RightArea"]
-position = Vector2(32, -15)
-shape = SubResource("RectangleShape2D_8r4jc")
-
-[node name="LeftArea" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftArea"]
-position = Vector2(-34.5, -13.5)
-shape = SubResource("RectangleShape2D_8r4jc")
-
-[connection signal="body_entered" from="DownArea" to="." method="_on_down_area_body_entered"]
-[connection signal="body_entered" from="UpArea" to="." method="_on_up_area_body_entered"]
-[connection signal="body_entered" from="RightArea" to="." method="_on_right_area_body_entered"]
-[connection signal="body_entered" from="LeftArea" to="." method="_on_left_area_body_entered"]
+[node name="AltitudeCount" type="RichTextLabel" parent="."]
+offset_left = 342.0
+offset_top = -295.0
+offset_right = 573.0
+offset_bottom = -255.0
+script = ExtResource("14_3v7gc")
