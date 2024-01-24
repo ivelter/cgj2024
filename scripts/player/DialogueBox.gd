@@ -19,7 +19,7 @@ Les trois tablettes contiennent chacune une partie de l’invocation d’Aesir, 
 """
 
 const diary_content = """
-
+Je suis un Atlante qui a cherché à se venger toute sa vie. J’ai cherché par tous les moyens à récupérer les trois tablettes d’invocation, mais en vain. Je n’étais pas à la hauteur. Si vous lisez ceci, c’est que vous cherchez la même chose que moi et que vous avez probablement réussi. C’est pourquoi je vous fais don de mon savoir à travers ces pages. Maintenant que vous avez détruit les Atlantes, vous devez penser avoir accompli votre devoir. Mais il n’en est rien. Il n’y a jamais eu de trahison. La guerre a bien eu lieu elle, mais il n’y a pas eu d’abandon. Nous avons juste fui, et avons cachés notre culpabilité avec une fausse histoire de trahison. Vous qui avez invoqué Aesir, vous n’avez causé que la perte de votre peuple. Et maintenant la terre entière va en périr. C’est bien dommage de finir comme ça. Mais que voulez vous, à part remonter dans le temps, faire machine arrière. Il est impossible de changer cela. Parfois il est bien que les secrets restent secrets.
 """
 
 """
