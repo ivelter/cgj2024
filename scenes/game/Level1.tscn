@@ -7011,7 +7011,7 @@ sprite_frames = SubResource("SpriteFrames_gykao")
 frame_progress = 0.557525
 
 [node name="Player" parent="." instance=ExtResource("9_i4vie")]
-position = Vector2(716, 1032)
+position = Vector2(792, 1142)
 
 [connection signal="body_entered" from="AnimatedSprite2D/Area2D" to="Player" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="AnimatedSprite2D/Area2D" to="Player" method="_on_area_2d_body_exited"]

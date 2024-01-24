@@ -126,6 +126,4 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_kupoi")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_colision_shape_body_entered"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_colision_shape_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_colision_shape_body_exited"]

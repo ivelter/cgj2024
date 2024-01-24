@@ -400,19 +400,19 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_porep"]
 size = Vector2(37, 40)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryj7v"]
-size = Vector2(66.5, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e8x0y"]
-size = Vector2(19.75, 53)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ivq8"]
 bg_color = Color(0.352941, 0.27451, 0.392157, 0.509804)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y00jh"]
 bg_color = Color(0.909804, 0.145098, 0.313726, 1)
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d3uno"]
+size = Vector2(54, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5cwq1"]
+size = Vector2(38, 74)
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 texture_filter = 1
 position = Vector2(479, 215)
 collision_layer = 3
@@ -433,31 +433,6 @@ autoplay = "down_idle"
 position = Vector2(-0.5, -1)
 shape = SubResource("RectangleShape2D_porep")
 debug_color = Color(0.67451, 0.278431, 0.203922, 0.419608)
-
-[node name="UpInteractCollision" type="CollisionShape2D" parent="."]
-texture_filter = 1
-position = Vector2(-0.5, -32)
-shape = SubResource("RectangleShape2D_ryj7v")
-disabled = true
-debug_color = Color(0.239216, 0.529412, 0.4, 0.419608)
-
-[node name="DownInteractCollision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 28)
-shape = SubResource("RectangleShape2D_ryj7v")
-disabled = true
-debug_color = Color(0.239216, 0.529412, 0.4, 0.419608)
-
-[node name="LeftInteractCollision" type="CollisionShape2D" parent="."]
-position = Vector2(-30, -2.5)
-shape = SubResource("RectangleShape2D_e8x0y")
-disabled = true
-debug_color = Color(0.329412, 0.407843, 0.882353, 0.419608)
-
-[node name="RightInteractCollision" type="CollisionShape2D" parent="."]
-position = Vector2(27, -3)
-shape = SubResource("RectangleShape2D_e8x0y")
-disabled = true
-debug_color = Color(0.329412, 0.407843, 0.882353, 0.419608)
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 offset_left = -555.0
@@ -513,3 +488,32 @@ offset_top = -295.0
 offset_right = 573.0
 offset_bottom = -255.0
 script = ExtResource("14_3v7gc")
+
+[node name="DownArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DownArea"]
+position = Vector2(1, 25)
+shape = SubResource("RectangleShape2D_d3uno")
+
+[node name="UpArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UpArea"]
+position = Vector2(1, -55)
+shape = SubResource("RectangleShape2D_d3uno")
+
+[node name="LeftArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftArea"]
+position = Vector2(-30, -15)
+shape = SubResource("RectangleShape2D_5cwq1")
+
+[node name="RightArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightArea"]
+position = Vector2(28, -15)
+shape = SubResource("RectangleShape2D_5cwq1")
+
+[connection signal="body_entered" from="DownArea" to="." method="_on_down_area_body_entered"]
+[connection signal="body_entered" from="UpArea" to="." method="_on_up_area_body_entered"]
+[connection signal="body_entered" from="LeftArea" to="." method="_on_left_area_body_entered"]
+[connection signal="body_entered" from="RightArea" to="." method="_on_right_area_body_entered"]
