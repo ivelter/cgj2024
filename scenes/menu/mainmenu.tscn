@@ -89,10 +89,10 @@ texture = ExtResource("4_vgwg1")
 
 [node name="TextureRect4" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 117.0
+offset_left = 96.0
 offset_top = 154.0
-offset_right = 474.0
-offset_bottom = 229.0
+offset_right = 467.0
+offset_bottom = 232.0
 texture = ExtResource("8_v7hha")
 
 [connection signal="pressed" from="NewGameButton" to="NewGameButton" method="_on_pressed"]
