@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var animation_player = $AnimatedSprite2D
 @onready var hurtBox = $Hurtbox
 @onready var healthBar = $HealthBar
-const SPEED = 20000
+const SPEED = 25000
 var walkingSpeed = 1.0
 var directionOfPlayer = "up" 
 var playerState = "idle"
