@@ -106,7 +106,7 @@ script = ExtResource("1_csyte")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(1.00003, -7.00003)
-scale = Vector2(2, 2)
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_ig5il")
 animation = &"idling"
 frame_progress = 0.854897
