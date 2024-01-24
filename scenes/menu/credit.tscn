@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddh34qtcpfg2a"]
+[gd_scene load_steps=7 format=3 uid="uid://ddh34qtcpfg2a"]
 
 [ext_resource type="Texture2D" uid="uid://b7og73vbn8ogq" path="res://assets/logo/fond_gris.png" id="1_31ho8"]
-[ext_resource type="Texture2D" uid="uid://cj6jxbeje3l45" path="res://assets/logo/main_title.png" id="2_31gh3"]
 [ext_resource type="Script" path="res://scenes/menu/retourButton.gd" id="2_r7mm0"]
 [ext_resource type="Texture2D" uid="uid://bbstgfn2saigo" path="res://assets/logo/credits1.png" id="3_luhvg"]
 [ext_resource type="Texture2D" uid="uid://cpm14ies6d28s" path="res://assets/logo/credits2.png" id="4_isvr3"]
+[ext_resource type="Texture2D" uid="uid://ccseyibxqavch" path="res://assets/logo/alquimene.png" id="5_0rp6r"]
+[ext_resource type="Texture2D" uid="uid://sdmbhkwjnuy0" path="res://assets/logo/name.png" id="6_3l7g3"]
 
 [node name="Credit" type="Node2D"]
 
@@ -14,14 +15,6 @@ offset_top = -8.0
 offset_right = 1167.0
 offset_bottom = 663.0
 texture = ExtResource("1_31ho8")
-
-[node name="TextureRect5" type="TextureRect" parent="."]
-offset_left = 64.0
-offset_top = 40.0
-offset_right = 651.0
-offset_bottom = 656.0
-texture = ExtResource("2_31gh3")
-expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 offset_left = 202.0
@@ -54,5 +47,20 @@ offset_right = 101.0
 offset_bottom = 622.0
 text = "retour"
 script = ExtResource("2_r7mm0")
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+offset_left = 76.0
+offset_top = 167.0
+offset_right = 380.0
+offset_bottom = 480.0
+texture = ExtResource("5_0rp6r")
+expand_mode = 1
+
+[node name="TextureRect6" type="TextureRect" parent="."]
+offset_left = 126.0
+offset_top = 501.0
+offset_right = 328.0
+offset_bottom = 567.0
+texture = ExtResource("6_3l7g3")
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
