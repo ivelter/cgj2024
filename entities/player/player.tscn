@@ -407,10 +407,10 @@ bg_color = Color(0.352941, 0.27451, 0.392157, 0.509804)
 bg_color = Color(0.909804, 0.145098, 0.313726, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d3uno"]
-size = Vector2(54, 38)
+size = Vector2(54, 87.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5cwq1"]
-size = Vector2(38, 74)
+size = Vector2(105, 74)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 texture_filter = 1
@@ -492,25 +492,25 @@ script = ExtResource("14_3v7gc")
 [node name="DownArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DownArea"]
-position = Vector2(1, 25)
+position = Vector2(1, 36.25)
 shape = SubResource("RectangleShape2D_d3uno")
 
 [node name="UpArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UpArea"]
-position = Vector2(1, -55)
+position = Vector2(1, -68.5)
 shape = SubResource("RectangleShape2D_d3uno")
 
 [node name="LeftArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftArea"]
-position = Vector2(-30, -15)
+position = Vector2(-43, -15)
 shape = SubResource("RectangleShape2D_5cwq1")
 
 [node name="RightArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightArea"]
-position = Vector2(28, -15)
+position = Vector2(61.5, -15)
 shape = SubResource("RectangleShape2D_5cwq1")
 
 [connection signal="body_entered" from="DownArea" to="." method="_on_down_area_body_entered"]
