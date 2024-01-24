@@ -13,7 +13,7 @@ func _ready():
 func _physics_process(delta):
 	if (Input.is_action_just_pressed("interact") and isEntered):
 		PlayerInfo.unlockStone2()
-		PlayerInfo.maxHealthPoints += 1
+		PlayerInfo.maxHealthPoints += 2
 		hide()
 
 func on_grave_entered(body: Node):

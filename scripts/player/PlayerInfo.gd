@@ -10,8 +10,8 @@ var currentAltitude
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	healthPoints = 3
-	maxHealthPoints = 3
+	healthPoints = 6
+	maxHealthPoints = 6
 	hasUnlockedStone1 = true
 	hasUnlockedStone2 = false
 	hasUnlockedStone3 = false
